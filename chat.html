@@ -15,7 +15,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
-
     background-color: #fff3f6;
 
     background-image:
@@ -43,8 +42,6 @@ header p {
     font-size: 19px;
 }
 
-/* HORNÁ LIŠTA */
-
 .topbar {
     background: rgba(255,255,255,.96);
     padding: 15px 20px;
@@ -71,15 +68,11 @@ header p {
     font-size: 18px;
 }
 
-/* HLAVNÝ OBSAH */
-
 .container {
     max-width: 1000px;
     margin: 25px auto 50px;
     padding: 0 15px;
 }
-
-/* PROFIL LUCIE */
 
 .profile {
     background: rgba(255,255,255,.92);
@@ -101,17 +94,13 @@ header p {
 .profile img {
     width: 100%;
     height: 420px;
-
     object-fit: cover;
-
     border-radius: 22px;
-
     display: block;
 }
 
 .photo-arrow {
     position: absolute;
-
     top: 50%;
     transform: translateY(-50%);
 
@@ -122,15 +111,11 @@ header p {
     border-radius: 50%;
 
     background: rgba(255,255,255,.90);
-
     color: #8e3fb4;
 
     font-size: 32px;
     font-weight: bold;
-
     cursor: pointer;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.20);
 }
 
 .photo-arrow.left {
@@ -144,20 +129,15 @@ header p {
 .photo-dots {
     display: flex;
     justify-content: center;
-
     gap: 9px;
-
     margin-top: 12px;
 }
 
 .photo-dot {
     width: 11px;
     height: 11px;
-
     border-radius: 50%;
-
     background: #d8b5df;
-
     cursor: pointer;
 }
 
@@ -168,21 +148,15 @@ header p {
 
 .profile h2 {
     margin: 15px 0 5px;
-
     color: #8e3fb4;
-
     font-size: 31px;
 }
 
 .profile p {
     margin: 0;
-
     color: #666;
-
     font-size: 18px;
 }
-
-/* CHAT */
 
 .chat-box {
     margin-top: 20px;
@@ -190,7 +164,6 @@ header p {
     background: rgba(255,255,255,.94);
 
     border-radius: 25px;
-
     padding: 20px;
 
     box-shadow:
@@ -204,7 +177,6 @@ header p {
     gap: 15px;
 
     min-height: 350px;
-
     max-height: 500px;
 
     overflow-y: auto;
@@ -212,29 +184,22 @@ header p {
     padding: 5px;
 }
 
-/* CHLAP = VĽAVO */
-
 .message.man {
     align-self: flex-start;
 
     max-width: 75%;
 
     background: #eee8f3;
-
     color: #333;
 
     border-radius: 20px;
-
     border-bottom-left-radius: 5px;
 
     padding: 14px 18px;
 
     font-size: 18px;
-
     line-height: 1.45;
 }
-
-/* LUCIA = VPRAVO */
 
 .message.woman {
     align-self: flex-end;
@@ -251,27 +216,22 @@ header p {
     color: white;
 
     border-radius: 20px;
-
     border-bottom-right-radius: 5px;
 
     padding: 14px 18px;
 
     font-size: 18px;
-
     line-height: 1.45;
 }
 
 .name {
     font-size: 14px;
-
     font-weight: bold;
 
     margin-bottom: 5px;
 
     opacity: .75;
 }
-
-/* OBRÁZOK V SPRÁVE */
 
 .message-image {
     display: block;
@@ -284,29 +244,23 @@ header p {
     margin-top: 5px;
 }
 
-/* VSTUP */
-
 .input-area {
     margin-top: 20px;
 
     display: flex;
-
     gap: 10px;
 }
 
 .input-area input {
     flex: 1;
-
     min-width: 0;
 
     padding: 16px;
 
     border: 2px solid #eadbea;
-
     border-radius: 17px;
 
     font-size: 17px;
-
     outline: none;
 
     background: white;
@@ -333,13 +287,102 @@ header p {
     color: white;
 
     font-size: 18px;
-
     font-weight: bold;
 
     cursor: pointer;
 }
 
-/* FOTO SPRÁVA */
+/* SMAJLÍKY */
+
+.emoji-area {
+    position: relative;
+    margin-top: 12px;
+}
+
+.emoji-button {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    background: #eee;
+
+    color: #555;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.emoji-panel {
+    display: none;
+
+    position: absolute;
+
+    left: 0;
+    bottom: 58px;
+
+    width: min(420px, 95vw);
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 16px;
+
+    padding: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.20);
+
+    z-index: 1000;
+}
+
+.emoji-panel.open {
+    display: block;
+}
+
+.emoji-title {
+    font-weight: bold;
+
+    color: #8e3fb4;
+
+    margin-bottom: 10px;
+}
+
+.emoji-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(8, 1fr);
+
+    gap: 5px;
+}
+
+.emoji {
+    border: none;
+
+    background: transparent;
+
+    font-size: 27px;
+
+    padding: 6px 2px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.emoji:hover {
+    background: #f3e7f5;
+}
+
+/* FOTO */
 
 .photo-send {
     margin-top: 12px;
@@ -375,11 +418,8 @@ header p {
 
 .selected-photo {
     font-size: 14px;
-
     color: #777;
 }
-
-/* MOBIL */
 
 @media (max-width:700px) {
 
@@ -415,10 +455,14 @@ header p {
     .message-image {
         max-width: 220px;
     }
+
+    .emoji-grid {
+        grid-template-columns:
+            repeat(7, 1fr);
+    }
 }
 </style>
 </head>
-
 
 <body>
 
@@ -431,7 +475,6 @@ header p {
     </p>
 
 </header>
-
 
 <div class="topbar">
 
@@ -453,11 +496,7 @@ header p {
 
 </div>
 
-
 <div class="container">
-
-
-    <!-- LUCIA -->
 
     <div class="profile">
 
@@ -487,7 +526,6 @@ header p {
 
         </div>
 
-
         <div class="photo-dots">
 
             <span
@@ -512,7 +550,6 @@ header p {
 
         </div>
 
-
         <h2 id="profileName">
             Lucia
         </h2>
@@ -523,17 +560,12 @@ header p {
 
     </div>
 
-
-    <!-- CHAT -->
-
     <div class="chat-box">
 
         <div
             class="messages"
             id="messages"
         >
-
-            <!-- LUCIA VPRAVO -->
 
             <div class="message woman">
 
@@ -546,9 +578,6 @@ header p {
 
             </div>
 
-
-            <!-- CHLAP VĽAVO -->
-
             <div class="message man">
 
                 <div class="name">
@@ -560,9 +589,6 @@ header p {
             </div>
 
         </div>
-
-
-        <!-- TEXT -->
 
         <div class="input-area">
 
@@ -583,6 +609,79 @@ header p {
 
         </div>
 
+        <!-- SMAJLÍKY -->
+
+        <div class="emoji-area">
+
+            <button
+                class="emoji-button"
+                type="button"
+                onclick="toggleEmojiPanel()"
+            >
+                😊 Smajlíky
+            </button>
+
+            <div
+                class="emoji-panel"
+                id="emojiPanel"
+            >
+
+                <div class="emoji-title">
+                    Smajlíky
+                </div>
+
+                <div class="emoji-grid">
+
+                    <button class="emoji" onclick="insertEmoji('😀')">😀</button>
+                    <button class="emoji" onclick="insertEmoji('😃')">😃</button>
+                    <button class="emoji" onclick="insertEmoji('😄')">😄</button>
+                    <button class="emoji" onclick="insertEmoji('😁')">😁</button>
+                    <button class="emoji" onclick="insertEmoji('😆')">😆</button>
+                    <button class="emoji" onclick="insertEmoji('😅')">😅</button>
+                    <button class="emoji" onclick="insertEmoji('😂')">😂</button>
+                    <button class="emoji" onclick="insertEmoji('🤣')">🤣</button>
+
+                    <button class="emoji" onclick="insertEmoji('😊')">😊</button>
+                    <button class="emoji" onclick="insertEmoji('😍')">😍</button>
+                    <button class="emoji" onclick="insertEmoji('🥰')">🥰</button>
+                    <button class="emoji" onclick="insertEmoji('😘')">😘</button>
+                    <button class="emoji" onclick="insertEmoji('😉')">😉</button>
+                    <button class="emoji" onclick="insertEmoji('😎')">😎</button>
+                    <button class="emoji" onclick="insertEmoji('🤭')">🤭</button>
+                    <button class="emoji" onclick="insertEmoji('😏')">😏</button>
+
+                    <button class="emoji" onclick="insertEmoji('😜')">😜</button>
+                    <button class="emoji" onclick="insertEmoji('🥳')">🥳</button>
+                    <button class="emoji" onclick="insertEmoji('🤗')">🤗</button>
+                    <button class="emoji" onclick="insertEmoji('❤️')">❤️</button>
+                    <button class="emoji" onclick="insertEmoji('🩷')">🩷</button>
+                    <button class="emoji" onclick="insertEmoji('💕')">💕</button>
+                    <button class="emoji" onclick="insertEmoji('💖')">💖</button>
+                    <button class="emoji" onclick="insertEmoji('💋')">💋</button>
+
+                    <button class="emoji" onclick="insertEmoji('👍')">👍</button>
+                    <button class="emoji" onclick="insertEmoji('👌')">👌</button>
+                    <button class="emoji" onclick="insertEmoji('👏')">👏</button>
+                    <button class="emoji" onclick="insertEmoji('🙏')">🙏</button>
+                    <button class="emoji" onclick="insertEmoji('🔥')">🔥</button>
+                    <button class="emoji" onclick="insertEmoji('🎉')">🎉</button>
+                    <button class="emoji" onclick="insertEmoji('😘')">😘</button>
+                    <button class="emoji" onclick="insertEmoji('🥰')">🥰</button>
+
+                    <button class="emoji" onclick="insertEmoji('😢')">😢</button>
+                    <button class="emoji" onclick="insertEmoji('😭')">😭</button>
+                    <button class="emoji" onclick="insertEmoji('😡')">😡</button>
+                    <button class="emoji" onclick="insertEmoji('😱')">😱</button>
+                    <button class="emoji" onclick="insertEmoji('🤔')">🤔</button>
+                    <button class="emoji" onclick="insertEmoji('😴')">😴</button>
+                    <button class="emoji" onclick="insertEmoji('🙈')">🙈</button>
+                    <button class="emoji" onclick="insertEmoji('😉')">😉</button>
+
+                </div>
+
+            </div>
+
+        </div>
 
         <!-- FOTO -->
 
@@ -612,171 +711,123 @@ header p {
 
 </div>
 
-
 <script>
 
-/*
-    PROFILY LUCIE
-
-    Každý profil má 4 fotografie.
-*/
+/* PROFILY */
 
 const profiles = {
 
     Lucia: {
-
         name: "Lucia",
-
         info: "29 rokov · Bratislava",
-
         photos: [
             "images/lucia-1.jpg",
             "images/lucia-2.jpg",
             "images/lucia-3.jpg",
             "images/lucia-4.jpg"
         ]
-
     },
 
     Nina: {
-
         name: "Nina",
-
         info: "31 rokov · Košice",
-
         photos: [
             "images/nina-1.jpg",
             "images/nina-2.jpg",
             "images/nina-3.jpg",
             "images/nina-4.jpg"
         ]
-
     },
 
     Veronika: {
-
         name: "Veronika",
-
         info: "27 rokov · Žilina",
-
         photos: [
             "images/veronika-1.jpg",
             "images/veronika-2.jpg",
             "images/veronika-3.jpg",
             "images/veronika-4.jpg"
         ]
-
     },
 
     Petra: {
-
         name: "Petra",
-
         info: "34 rokov · Trnava",
-
         photos: [
             "images/petra-1.jpg",
             "images/petra-2.jpg",
             "images/petra-3.jpg",
             "images/petra-4.jpg"
         ]
-
     },
 
     Monika: {
-
         name: "Monika",
-
         info: "30 rokov · Nitra",
-
         photos: [
             "images/monika-1.jpg",
             "images/monika-2.jpg",
             "images/monika-3.jpg",
             "images/monika-4.jpg"
         ]
-
     },
 
     Sandra: {
-
         name: "Sandra",
-
         info: "26 rokov · Banská Bystrica",
-
         photos: [
             "images/sandra-1.jpg",
             "images/sandra-2.jpg",
             "images/sandra-3.jpg",
             "images/sandra-4.jpg"
         ]
-
     },
 
     Katarína: {
-
         name: "Katarína",
-
         info: "32 rokov · Prešov",
-
         photos: [
             "images/katarina-1.jpg",
             "images/katarina-2.jpg",
             "images/katarina-3.jpg",
             "images/katarina-4.jpg"
         ]
-
     },
 
     Simona: {
-
         name: "Simona",
-
         info: "28 rokov · Poprad",
-
         photos: [
             "images/simona-1.jpg",
             "images/simona-2.jpg",
             "images/simona-3.jpg",
             "images/simona-4.jpg"
         ]
-
     },
 
     Alexandra: {
-
         name: "Alexandra",
-
         info: "30 rokov · Trenčín · Trans žena",
-
         photos: [
             "images/alexandra-1.jpg",
             "images/alexandra-2.jpg",
             "images/alexandra-3.jpg",
             "images/alexandra-4.jpg"
         ]
-
     },
 
     Bianka: {
-
         name: "Bianka",
-
         info: "28 rokov · Zvolen · Bisexuálna žena",
-
         photos: [
             "images/bianka-1.jpg",
             "images/bianka-2.jpg",
             "images/bianka-3.jpg",
             "images/bianka-4.jpg"
         ]
-
     }
 
 };
-
-
-/* VYBRANÝ PROFIL */
 
 const params =
     new URLSearchParams(
@@ -788,9 +839,6 @@ const profileId =
 
 const profile =
     profiles[profileId] || profiles.Lucia;
-
-
-/* PROFIL */
 
 document
     .getElementById("profileName")
@@ -817,12 +865,9 @@ const dots =
 
 let currentPhoto = 0;
 
-
 function showPhoto(index) {
 
-    if (
-        index < 0
-    ) {
+    if (index < 0) {
         index =
             profile.photos.length - 1;
     }
@@ -853,39 +898,18 @@ function showPhoto(index) {
     );
 }
 
-
 function nextPhoto() {
-
-    showPhoto(
-        currentPhoto + 1
-    );
-
+    showPhoto(currentPhoto + 1);
 }
-
 
 function previousPhoto() {
-
-    showPhoto(
-        currentPhoto - 1
-    );
-
+    showPhoto(currentPhoto - 1);
 }
-
 
 showPhoto(0);
 
 
 /* KREDITY */
-
-/*
-    DÔLEŽITÉ:
-
-    Zatiaľ je zostatok oddelený podľa
-    používateľského identifikátora.
-
-    V skutočnej verzii bude tento údaj
-    načítaný zo servera podľa účtu.
-*/
 
 const userId =
     localStorage.getItem(
@@ -896,21 +920,16 @@ const userId =
     ) ||
     "demo-user";
 
-
 const creditKey =
     "spoznajma_user_credits_" +
     userId;
-
 
 let credits =
     localStorage.getItem(
         creditKey
     );
 
-
-if (
-    credits === null
-) {
+if (credits === null) {
 
     credits = 2;
 
@@ -918,13 +937,9 @@ if (
         creditKey,
         credits
     );
-
 }
 
-
-credits =
-    Number(credits);
-
+credits = Number(credits);
 
 function updateCredits() {
 
@@ -934,7 +949,6 @@ function updateCredits() {
         credits.toFixed(1);
 
 }
-
 
 updateCredits();
 
@@ -951,11 +965,9 @@ function sendMessage() {
     const text =
         input.value.trim();
 
-
     if (!text) {
         return;
     }
-
 
     if (credits < 0.5) {
 
@@ -964,18 +976,14 @@ function sendMessage() {
         );
 
         return;
-
     }
 
-
     credits -= 0.5;
-
 
     localStorage.setItem(
         creditKey,
         credits
     );
-
 
     const message =
         document.createElement(
@@ -984,7 +992,6 @@ function sendMessage() {
 
     message.className =
         "message man";
-
 
     const name =
         document.createElement(
@@ -997,7 +1004,6 @@ function sendMessage() {
     name.textContent =
         "On";
 
-
     const content =
         document.createElement(
             "div"
@@ -1006,79 +1012,75 @@ function sendMessage() {
     content.textContent =
         text;
 
-
-    message.appendChild(
-        name
-    );
-
-    message.appendChild(
-        content
-    );
-
+    message.appendChild(name);
+    message.appendChild(content);
 
     document
         .getElementById("messages")
-        .appendChild(
-            message
-        );
-
+        .appendChild(message);
 
     input.value = "";
 
-
     updateCredits();
-
 
     message.scrollIntoView({
         behavior: "smooth",
         block: "nearest"
     });
-
 }
 
-
-/* ODOSLAŤ */
-
 document
-    .getElementById(
-        "sendButton"
-    )
+    .getElementById("sendButton")
     .addEventListener(
         "click",
         sendMessage
     );
 
-
-/* ENTER */
-
 document
-    .getElementById(
-        "messageInput"
-    )
+    .getElementById("messageInput")
     .addEventListener(
         "keydown",
         function(event) {
 
-            if (
-                event.key === "Enter"
-            ) {
+            if (event.key === "Enter") {
 
                 event.preventDefault();
 
                 sendMessage();
-
             }
 
         }
     );
 
 
+/* SMAJLÍKY */
+
+function toggleEmojiPanel() {
+
+    document
+        .getElementById("emojiPanel")
+        .classList.toggle("open");
+
+}
+
+function insertEmoji(emoji) {
+
+    const input =
+        document.getElementById(
+            "messageInput"
+        );
+
+    input.value += emoji;
+
+    input.focus();
+
+}
+
+
 /* FOTO V SPRÁVE */
 
 document
-    .getElementById(
-        "photoInput"
-    )
+    .getElementById("photoInput")
     .addEventListener(
         "change",
         function(event) {
@@ -1086,11 +1088,9 @@ document
             const file =
                 event.target.files[0];
 
-
             if (!file) {
                 return;
             }
-
 
             if (
                 !file.type.startsWith(
@@ -1103,43 +1103,28 @@ document
                 );
 
                 return;
-
             }
 
-
-            if (
-                credits < 0.5
-            ) {
+            if (credits < 0.5) {
 
                 alert(
                     "Nemáš dostatok kreditov."
                 );
 
-                event.target.value =
-                    "";
+                event.target.value = "";
 
                 return;
-
             }
 
-
-            /*
-                Aj fotografia v chate
-                stojí 0,5 kreditu.
-            */
-
             credits -= 0.5;
-
 
             localStorage.setItem(
                 creditKey,
                 credits
             );
 
-
             const reader =
                 new FileReader();
-
 
             reader.onload =
                 function(e) {
@@ -1152,7 +1137,6 @@ document
                     message.className =
                         "message man";
 
-
                     const name =
                         document.createElement(
                             "div"
@@ -1163,7 +1147,6 @@ document
 
                     name.textContent =
                         "On";
-
 
                     const image =
                         document.createElement(
@@ -1179,35 +1162,22 @@ document
                     image.alt =
                         "Fotografia od používateľa";
 
-
-                    message.appendChild(
-                        name
-                    );
-
-                    message.appendChild(
-                        image
-                    );
-
+                    message.appendChild(name);
+                    message.appendChild(image);
 
                     document
                         .getElementById(
                             "messages"
                         )
-                        .appendChild(
-                            message
-                        );
-
+                        .appendChild(message);
 
                     updateCredits();
-
 
                     document
                         .getElementById(
                             "selectedPhoto"
                         )
-                        .textContent =
-                        "";
-
+                        .textContent = "";
 
                     message.scrollIntoView({
                         behavior: "smooth",
@@ -1216,14 +1186,9 @@ document
 
                 };
 
+            reader.readAsDataURL(file);
 
-            reader.readAsDataURL(
-                file
-            );
-
-
-            event.target.value =
-                "";
+            event.target.value = "";
 
         }
     );
