@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Profil | SpoznajMa</title>
+<title>Profily – SpoznajMa ❤️</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -16,379 +14,263 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
-
-    background-color: #fff7f8;
+    background-color: #fff8f9;
 
     background-image:
-        radial-gradient(circle at 10% 15%, rgba(210,35,65,.07) 0 3px, transparent 4px),
-        radial-gradient(circle at 80% 25%, rgba(210,35,65,.06) 0 3px, transparent 4px),
-        radial-gradient(circle at 25% 70%, rgba(210,35,65,.06) 0 3px, transparent 4px),
-        radial-gradient(circle at 90% 80%, rgba(210,35,65,.07) 0 3px, transparent 4px),
-        linear-gradient(135deg,#fff8f9,#fff1f3);
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Ctext x='25' y='55' font-size='22' fill='%23d62845' fill-opacity='0.08'%3E♥%3C/text%3E%3Ctext x='125' y='125' font-size='17' fill='%23d62845' fill-opacity='0.06'%3E♥%3C/text%3E%3Ctext x='80' y='160' font-size='13' fill='%23d62845' fill-opacity='0.05'%3E♥%3C/text%3E%3C/svg%3E");
 
-    background-size:
-        150px 150px,
-        190px 190px,
-        170px 170px,
-        210px 210px,
-        100% 100%;
-
+    background-repeat: repeat;
+    background-size: 180px 180px;
     min-height: 100vh;
 }
 
-body::before {
-    content: "♥     ♡          ♥       ♡     ♥          ♡";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-
-    color: rgba(210,35,65,.045);
-    font-size: 28px;
-    line-height: 120px;
-    letter-spacing: 20px;
-    word-spacing: 25px;
-
-    pointer-events: none;
-    overflow: hidden;
-}
-
 header {
-    background: linear-gradient(135deg,#d81b60,#8e24aa);
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 28px 15px;
 }
 
 header h1 {
-    margin: 0 0 8px;
-    font-size: 30px;
+    margin: 0;
+    font-size: 42px;
 }
 
 header p {
-    margin: 0;
-    opacity: .95;
+    margin: 10px 0 0;
+    font-size: 23px;
 }
 
 nav {
-    background: white;
-    padding: 12px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    background: rgba(255,255,255,.97);
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    padding: 25px 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    flex-wrap: wrap;
 }
 
 nav a {
-    margin: 0 10px;
-    color: #8e24aa;
     text-decoration: none;
+    color: #7e32a2;
     font-weight: bold;
+    font-size: 23px;
 }
 
 .container {
-    max-width: 850px;
-    margin: 25px auto;
-    padding: 0 15px;
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 20px;
 }
 
-.profile {
+h2.page-title {
+    text-align: center;
+    color: #8b32a9;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 28px;
+}
+
+.profile-card {
     background: rgba(255,255,255,.97);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 18px rgba(0,0,0,.10);
-}
-
-.profile-photo {
-    width: 100%;
-    max-width: 420px;
-    height: 460px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 18px;
-}
-
-.profile h2 {
-    text-align: center;
-    color: #8e24aa;
-    margin: 10px 0;
-    font-size: 28px;
-}
-
-.details {
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.description {
-    background: #faf7fb;
+    border-radius: 28px;
     padding: 18px;
-    border-radius: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    box-shadow: 0 7px 25px rgba(120,30,60,.10);
 }
 
-.actions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.profile-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
 }
 
-.btn {
+.profile-info {
+    padding: 20px 8px 8px;
+}
+
+.profile-info h3 {
+    margin: 0;
+    color: #8b32a9;
+    font-size: 30px;
+}
+
+.profile-info p {
+    color: #666;
+    font-size: 21px;
+    margin: 8px 0 18px;
+}
+
+.profile-button {
     display: block;
     width: 100%;
-    padding: 15px;
-    border-radius: 12px;
-    border: none;
+    padding: 17px;
+    border-radius: 16px;
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
+    color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-chat {
-    background: linear-gradient(135deg,#d81b60,#8e24aa);
-    color: white;
-}
-
-.btn-back {
-    background: #eeeeee;
-    color: #555;
 }
 
 footer {
     text-align: center;
-    padding: 30px 15px;
+    padding: 40px 20px;
     color: #777;
-    font-size: 14px;
 }
 
-@media (max-width:600px) {
-
+@media (max-width:700px) {
     header h1 {
-        font-size: 25px;
+        font-size: 36px;
     }
 
-    .profile-photo {
-        height: 380px;
+    header p {
+        font-size: 20px;
     }
 
+    nav {
+        gap: 24px;
+    }
+
+    nav a {
+        font-size: 19px;
+    }
+
+    .profiles {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card img {
+        height: 420px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
     <h1>SpoznajMa ❤️</h1>
-
-    <p>
-        Virtuálne profily a moderované konverzácie
-    </p>
-
+    <p>Virtuálne profily a moderované konverzácie</p>
 </header>
 
 <nav>
-
     <a href="index.html">Domov</a>
-
     <a href="profily.html">Profily</a>
-
     <a href="kredity.html">Kredity</a>
-
     <a href="prihlasenie.html">Prihlásenie</a>
-
 </nav>
 
 <div class="container">
 
-    <div class="profile">
+<h2 class="page-title">Profily</h2>
 
-        <img
-            id="profilePhoto"
-            class="profile-photo"
-            src="images/lucia-1.jpg"
-            alt="Profil"
-        >
+<div class="profiles">
 
-        <h2 id="profileName">
-            Lucia
-        </h2>
+<div class="profile-card">
+<img src="images/lucia-1.jpg" alt="Lucia">
+<div class="profile-info">
+<h3>Lucia, 29</h3>
+<p>📍 Bratislava</p>
+<a class="profile-button" href="profil.html?meno=Lucia">Zobraziť profil</a>
+</div>
+</div>
 
-        <div
-            class="details"
-            id="profileDetails"
-        >
-            29 rokov · Bratislava
-        </div>
+<div class="profile-card">
+<img src="images/nina-1.jpg" alt="Nina">
+<div class="profile-info">
+<h3>Nina, 31</h3>
+<p>📍 Košice</p>
+<a class="profile-button" href="profil.html?meno=Nina">Zobraziť profil</a>
+</div>
+</div>
 
-        <div
-            class="description"
-            id="profileDescription"
-        >
-            Ahoj 😊 Rada spoznávam nových ľudí,
-            rozprávam sa o každodennom živote,
-            cestovaní, záľubách a všetkom,
-            čo môže vytvoriť príjemnú konverzáciu.
-        </div>
+<div class="profile-card">
+<img src="images/veronika-1.jpg" alt="Veronika">
+<div class="profile-info">
+<h3>Veronika, 27</h3>
+<p>📍 Žilina</p>
+<a class="profile-button" href="profil.html?meno=Veronika">Zobraziť profil</a>
+</div>
+</div>
 
-        <div class="actions">
+<div class="profile-card">
+<img src="images/petra-1.jpg" alt="Petra">
+<div class="profile-info">
+<h3>Petra, 34</h3>
+<p>📍 Trnava</p>
+<a class="profile-button" href="profil.html?meno=Petra">Zobraziť profil</a>
+</div>
+</div>
 
-            <a
-                href="chat.html"
-                class="btn btn-chat"
-            >
-                💬 Začať chat
-            </a>
+<div class="profile-card">
+<img src="images/monika-1.jpg" alt="Monika">
+<div class="profile-info">
+<h3>Monika, 30</h3>
+<p>📍 Nitra</p>
+<a class="profile-button" href="profil.html?meno=Monika">Zobraziť profil</a>
+</div>
+</div>
 
-            <a
-                href="profily.html"
-                class="btn btn-back"
-            >
-                ← Späť na profily
-            </a>
+<div class="profile-card">
+<img src="images/sandra-1.jpg" alt="Sandra">
+<div class="profile-info">
+<h3>Sandra, 26</h3>
+<p>📍 Banská Bystrica</p>
+<a class="profile-button" href="profil.html?meno=Sandra">Zobraziť profil</a>
+</div>
+</div>
 
-        </div>
+<div class="profile-card">
+<img src="images/katarina-1.jpg" alt="Katarína">
+<div class="profile-info">
+<h3>Katarína, 32</h3>
+<p>📍 Prešov</p>
+<a class="profile-button" href="profil.html?meno=Katarína">Zobraziť profil</a>
+</div>
+</div>
 
-    </div>
+<div class="profile-card">
+<img src="images/simona-1.jpg" alt="Simona">
+<div class="profile-info">
+<h3>Simona, 28</h3>
+<p>📍 Poprad</p>
+<a class="profile-button" href="profil.html?meno=Simona">Zobraziť profil</a>
+</div>
+</div>
 
+<div class="profile-card">
+<img src="images/alexandra-1.jpg" alt="Alexandra">
+<div class="profile-info">
+<h3>Alexandra, 30</h3>
+<p>📍 Trenčín · Trans žena</p>
+<a class="profile-button" href="profil.html?meno=Alexandra">Zobraziť profil</a>
+</div>
+</div>
+
+<div class="profile-card">
+<img src="images/bianka-1.jpg" alt="Bianka">
+<div class="profile-info">
+<h3>Bianka, 28</h3>
+<p>📍 Zvolen · Bisexuálna žena</p>
+<a class="profile-button" href="profil.html?meno=Bianka">Zobraziť profil</a>
+</div>
+</div>
+
+</div>
 </div>
 
 <footer>
-    © 2026 SpoznajMa
+© 2026 SpoznajMa
 </footer>
-
-<script>
-
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
-
-const meno =
-    params.get("meno");
-
-const profily = {
-
-    Lucia: {
-        vek: "29 rokov",
-        mesto: "Bratislava",
-        foto: "images/lucia-1.jpg",
-        popis:
-        "Ahoj 😊 Rada spoznávam nových ľudí, rozprávam sa o každodennom živote, cestovaní, záľubách a všetkom, čo môže vytvoriť príjemnú konverzáciu."
-    },
-
-    Nina: {
-        vek: "31 rokov",
-        mesto: "Košice",
-        foto: "images/nina-1.jpg",
-        popis:
-        "Som rada, keď sa dá s niekým otvorene a príjemne porozprávať. Mám rada humor, hudbu, filmy a dlhé večerné rozhovory."
-    },
-
-    Veronika: {
-        vek: "27 rokov",
-        mesto: "Žilina",
-        foto: "images/veronika-1.jpg",
-        popis:
-        "Rada objavujem nové miesta a spoznávam nové príbehy. Najviac si cením úprimnosť, dobrý humor a príjemnú komunikáciu."
-    },
-
-    Petra: {
-        vek: "34 rokov",
-        mesto: "Trnava",
-        foto: "images/petra-1.jpg",
-        popis:
-        "Mám rada pokojné rozhovory, dobrú kávu, cestovanie a ľudí, ktorí sa vedia zasmiať aj sami na sebe."
-    },
-
-    Monika: {
-        vek: "30 rokov",
-        mesto: "Nitra",
-        foto: "images/monika-1.jpg",
-        popis:
-        "Som spoločenská a rada sa rozprávam o rôznych témach. Možno práve náš rozhovor bude tým, ktorý ti spríjemní deň."
-    },
-
-    Sandra: {
-        vek: "26 rokov",
-        mesto: "Banská Bystrica",
-        foto: "images/sandra-1.jpg",
-        popis:
-        "Mám rada spontánnosť, zaujímavé otázky a dlhé rozhovory. Rada sa dozvedám, čo druhých baví a čo ich robí šťastnými."
-    },
-
-    Katarína: {
-        vek: "32 rokov",
-        mesto: "Prešov",
-        foto: "images/katarina-1.jpg",
-        popis:
-        "Verím, že dobrý rozhovor môže začať úplne obyčajnou otázkou. Mám rada humor, filmy a príjemnú spoločnosť."
-    },
-
-    Simona: {
-        vek: "28 rokov",
-        mesto: "Poprad",
-        foto: "images/simona-1.jpg",
-        popis:
-        "Milujem hory, výlety a pokojné večery. Rada si vypočujem tvoje zážitky a porozprávam sa o tom, čo máš rád."
-    },
-
-    Alexandra: {
-        vek: "30 rokov",
-        mesto: "Trenčín",
-        foto: "images/alexandra-1.jpg",
-        popis:
-        "Som trans žena a rada spoznávam ľudí, ktorí pristupujú ku komunikácii s rešpektom, otvorenosťou a humorom."
-    },
-
-    Bianka: {
-        vek: "28 rokov",
-        mesto: "Zvolen",
-        foto: "images/bianka-1.jpg",
-        popis:
-        "Som bisexuálna žena. Rada sa rozprávam o živote, vzťahoch, cestovaní a o všetkom, čo nás môže navzájom zaujať."
-    }
-
-};
-
-if (meno && profily[meno]) {
-
-    const profil =
-        profily[meno];
-
-    document.getElementById(
-        "profileName"
-    ).textContent = meno;
-
-    document.getElementById(
-        "profileDetails"
-    ).textContent =
-        profil.vek +
-        " · " +
-        profil.mesto;
-
-    document.getElementById(
-        "profilePhoto"
-    ).src =
-        profil.foto;
-
-    document.getElementById(
-        "profilePhoto"
-    ).alt =
-        "Profil " + meno;
-
-    document.getElementById(
-        "profileDescription"
-    ).textContent =
-        profil.popis;
-
-}
-
-</script>
 
 </body>
 </html>
