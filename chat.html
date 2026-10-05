@@ -1,397 +1,374 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat | SpoznajMa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpoznajMa – Chat</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f4f8;
-      color: #333;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3f6;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #8e44ad, #d63384);
+    color: white;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.credits {
+    background: rgba(255,255,255,0.18);
+    padding: 9px 14px;
+    border-radius: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.profile {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.profile img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile h2 {
+    margin: 0 0 5px;
+    color: #8e44ad;
+}
+
+.profile p {
+    margin: 0;
+    color: #777;
+}
+
+.notice {
+    background: #fff4fb;
+    border: 1px solid #f0c7df;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.chat {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 430px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* MUŽ – VĽAVO */
+.message.man {
+    align-self: flex-start;
+    background: #eeeeee;
+    color: #333;
+    border-radius: 16px 16px 16px 4px;
+    padding: 11px 14px;
+    max-width: 75%;
+}
+
+/* LUCIA / JA – VPRAVO */
+.message.lucia {
+    align-self: flex-end;
+    background: #8e44ad;
+    color: white;
+    border-radius: 16px 16px 4px 16px;
+    padding: 11px 14px;
+    max-width: 75%;
+}
+
+.sender {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    opacity: 0.8;
+}
+
+.message-text {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.composer {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.composer input {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+.composer button {
+    border: none;
+    background: #8e44ad;
+    color: white;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.composer button:hover {
+    background: #74358f;
+}
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.panic {
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 11px 17px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back {
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
 
     header {
-      background: linear-gradient(135deg, #d81b60, #8e24aa);
-      color: white;
-      text-align: center;
-      padding: 18px 15px;
+        padding: 14px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 27px;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 14px;
-    }
-
-    nav {
-      background: white;
-      padding: 12px 8px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    nav a {
-      margin: 0 8px;
-      color: #8e24aa;
-      text-decoration: none;
-      font-weight: bold;
+    .logo {
+        font-size: 20px;
     }
 
     .container {
-      max-width: 800px;
-      margin: 25px auto;
-      padding: 0 15px;
+        margin-top: 12px;
     }
 
-    .chat-box {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    .chat {
+        padding: 14px;
     }
 
-    .profile-bar {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 15px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .profile-bar img {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .profile-bar h2 {
-      margin: 0;
-      color: #8e24aa;
-      font-size: 21px;
-    }
-
-    .profile-bar p {
-      margin: 5px 0 0;
-      color: #777;
-      font-size: 14px;
-    }
-
-    .credits {
-      margin-left: auto;
-      background: #f3e5f5;
-      color: #8e24aa;
-      padding: 9px 12px;
-      border-radius: 10px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .messages {
-      height: 430px;
-      overflow-y: auto;
-      padding: 20px;
-      background: #faf8fb;
-    }
-
-    .message {
-      max-width: 75%;
-      padding: 11px 14px;
-      border-radius: 16px;
-      margin-bottom: 12px;
-      line-height: 1.45;
-    }
-
-    .received {
-      background: white;
-      border: 1px solid #eee;
-      margin-right: auto;
-    }
-
-    .sent {
-      background: linear-gradient(135deg, #d81b60, #8e24aa);
-      color: white;
-      margin-left: auto;
-    }
-
-    .message small {
-      display: block;
-      margin-top: 5px;
-      opacity: 0.65;
-      font-size: 11px;
+    .message.man,
+    .message.lucia {
+        max-width: 85%;
     }
 
     .composer {
-      padding: 15px;
-      border-top: 1px solid #eee;
-      background: white;
+        flex-direction: column;
     }
 
-    .composer textarea {
-      width: 100%;
-      height: 80px;
-      resize: none;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
+    .composer button {
+        height: 45px;
     }
-
-    .composer textarea:focus {
-      outline: none;
-      border-color: #8e24aa;
-    }
-
-    .send-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .send {
-      flex: 1;
-      padding: 13px;
-      border: none;
-      border-radius: 11px;
-      background: linear-gradient(135deg, #d81b60, #8e24aa);
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .panic {
-      padding: 13px 18px;
-      border: none;
-      border-radius: 11px;
-      background: #eeeeee;
-      color: #555;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .cost {
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-      margin-top: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      .credits {
-        font-size: 12px;
-        padding: 7px;
-      }
-
-      .messages {
-        height: 380px;
-      }
-
-      .message {
-        max-width: 85%;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>❤️ SpoznajMa ❤️</h1>
-  <p>Príjemné rozhovory</p>
+    <div class="logo">SpoznajMa</div>
+    <div class="credits">
+        Kredity: <span id="credits">2</span>
+    </div>
 </header>
-
-<nav>
-  <a href="index.html">Domov</a>
-  <a href="profily.html">Profily</a>
-  <a href="kredity.html">Kredity</a>
-  <a href="registracia.html">Registrácia</a>
-  <a href="prihlasenie.html">Prihlásenie</a>
-</nav>
 
 <div class="container">
 
-  <div class="chat-box">
-
-    <div class="profile-bar">
-
-      <img
-        src="images/lucia-1.jpg"
-        alt="Lucia"
-      >
-
-      <div>
-        <h2>Lucia, 29</h2>
-        <p>Bratislava</p>
-      </div>
-
-      <div class="credits">
-        <span id="creditCount">2.0</span> kreditov
-      </div>
-
+    <div class="profile">
+        <img src="images/lucia-1.jpg" alt="Lucia">
+        <div>
+            <h2>Lucia, 29</h2>
+            <p>Bratislava</p>
+        </div>
     </div>
 
-    <div class="messages" id="messages">
-
-      <div class="message received">
-        Ahoj 😊 Ako sa dnes máš?
-        <small>Lucia</small>
-      </div>
-
-      <div class="message sent">
-        Ahoj Lucia, mám sa dobre. A ty?
-        <small>Ty</small>
-      </div>
-
-      <div class="message received">
-        Tiež dobre 😊 Čo rád robíš vo voľnom čase?
-        <small>Lucia</small>
-      </div>
-
+    <div class="notice">
+        Tento profil je virtuálny a komunikácia je moderovaná.
     </div>
 
-    <div class="composer">
+    <div class="chat">
 
-      <textarea
-        id="messageInput"
-        placeholder="Napíš správu..."
-      ></textarea>
+        <div class="messages" id="messages">
 
-      <div class="send-row">
+            <!-- MUŽ – VĽAVO -->
+            <div class="message man">
+                <div class="sender">On</div>
+                <div class="message-text">
+                    Ahoj Lucia 😊 Ako sa dnes máš?
+                </div>
+            </div>
 
-        <button
-          class="send"
-          onclick="sendMessage()"
-        >
-          💬 Odoslať
-        </button>
+            <!-- LUCIA – VPRAVO -->
+            <div class="message lucia">
+                <div class="sender">Lucia</div>
+                <div class="message-text">
+                    Ahoj 😊 Mám sa dobre. A ty?
+                </div>
+            </div>
 
-        <button
-          class="panic"
-          onclick="panicRoom()"
-        >
-          Bezpečne odísť
-        </button>
+            <!-- MUŽ – VĽAVO -->
+            <div class="message man">
+                <div class="sender">On</div>
+                <div class="message-text">
+                    Tiež dobre. Som rád, že si odpísala.
+                </div>
+            </div>
 
-      </div>
+        </div>
 
-      <div class="cost">
-        Jedna odoslaná správa = 0,5 kreditu
-      </div>
+        <div class="composer">
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Napíš správu..."
+            >
+            <button onclick="sendMessage()">Odoslať</button>
+        </div>
+
+        <div class="actions">
+            <a class="back" href="index.html">← Späť</a>
+
+            <button class="panic" onclick="panicRoom()">
+                🚨 Panic Room
+            </button>
+        </div>
 
     </div>
-
-  </div>
 
 </div>
 
-<footer>
-  © 2026 SpoznajMa · Podmienky služby · Ochrana súkromia
-</footer>
-
 <script>
-  let credits = 2.0;
 
-  const creditCount =
-    document.getElementById("creditCount");
+let credits = Number(localStorage.getItem("spoznajma_credits"));
 
-  const messageInput =
-    document.getElementById("messageInput");
+if (isNaN(credits)) {
+    credits = 2;
+}
 
-  const messages =
-    document.getElementById("messages");
+document.getElementById("credits").textContent = credits;
 
-  function updateCredits() {
-    creditCount.textContent = credits.toFixed(1);
-  }
 
-  function sendMessage() {
+function sendMessage() {
 
-    const text = messageInput.value.trim();
+    const input = document.getElementById("messageInput");
+    const text = input.value.trim();
 
     if (!text) {
-      return;
+        return;
     }
 
     if (credits < 0.5) {
-      alert(
-        "Nemáš dostatok kreditov. " +
-        "Na odoslanie správy potrebuješ 0,5 kreditu."
-      );
-
-      return;
+        alert("Nemáš dostatok kreditov.");
+        return;
     }
 
     credits -= 0.5;
 
+    localStorage.setItem(
+        "spoznajma_credits",
+        credits
+    );
+
+    document.getElementById("credits").textContent = credits;
+
     const message = document.createElement("div");
 
-    message.className = "message sent";
+    /*
+      TOTO JE LUCIA = JA
+      Preto sa správa zaradí DOPRAVA.
+    */
 
-    message.innerHTML =
-      escapeHtml(text) +
-      "<small>Ty</small>";
+    message.className = "message lucia";
 
-    messages.appendChild(message);
+    message.innerHTML = `
+        <div class="sender">Lucia</div>
+        <div class="message-text">
+            ${escapeHtml(text)}
+        </div>
+    `;
 
-    messageInput.value = "";
+    document.getElementById("messages").appendChild(message);
 
-    updateCredits();
+    input.value = "";
 
-    messages.scrollTop = messages.scrollHeight;
-  }
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
 
-  function escapeHtml(text) {
+
+function escapeHtml(text) {
+
     const div = document.createElement("div");
-    div.textContent = text;
-    return div.innerHTML;
-  }
 
-  function panicRoom() {
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+function panicRoom() {
+
     const confirmed = confirm(
-      "Naozaj chceš opustiť chat?"
+        "Panic Room ukončí túto konverzáciu. Pokračovať?"
     );
 
     if (confirmed) {
-      window.location.href = "index.html";
+        window.location.href = "index.html";
     }
-  }
+}
 
-  messageInput.addEventListener(
-    "keydown",
-    function(event) {
-
-      if (
-        event.key === "Enter" &&
-        !event.shiftKey
-      ) {
-        event.preventDefault();
-        sendMessage();
-      }
-
-    }
-  );
-
-  updateCredits();
 </script>
 
 </body>
