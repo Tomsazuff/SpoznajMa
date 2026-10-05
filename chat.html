@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SpoznajMa ❤️</title>
+<title>Chat – SpoznajMa ❤️</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -24,12 +23,11 @@ body {
 
     background-repeat: repeat;
     background-size: 140px 140px;
-
     min-height: 100vh;
 }
 
 header {
-    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
     color: white;
     text-align: center;
     padding: 25px 15px;
@@ -74,8 +72,6 @@ header p {
     padding: 0 15px;
 }
 
-/* PROFIL */
-
 .profile {
     background: rgba(255,255,255,.88);
     border-radius: 25px;
@@ -104,8 +100,6 @@ header p {
     font-size: 18px;
 }
 
-/* CHAT */
-
 .chat-box {
     margin-top: 20px;
     background: rgba(255,255,255,.88);
@@ -121,13 +115,12 @@ header p {
     min-height: 300px;
 }
 
-/* =================================
-   CHLAP / TY — VĽAVO
-   ================================= */
+/* =========================================
+   CHLAP / ON = VĽAVO
+   ========================================= */
 
 .message.man {
     align-self: flex-start;
-
     max-width: 75%;
 
     background: #eee8f3;
@@ -142,13 +135,12 @@ header p {
     line-height: 1.45;
 }
 
-/* =================================
-   LUCIA / ŽENA — VPRAVO
-   ================================= */
+/* =========================================
+   LUCIA / JA = VPRAVO
+   ========================================= */
 
 .message.woman {
     align-self: flex-end;
-
     max-width: 75%;
 
     background: linear-gradient(
@@ -175,8 +167,6 @@ header p {
     opacity: .75;
 }
 
-/* VSTUP */
-
 .input-area {
     margin-top: 20px;
     display: flex;
@@ -193,7 +183,6 @@ header p {
     border-radius: 17px;
 
     font-size: 17px;
-
     outline: none;
     background: white;
 }
@@ -205,7 +194,6 @@ header p {
 .send {
     border: none;
     border-radius: 17px;
-
     padding: 0 23px;
 
     background: linear-gradient(
@@ -215,12 +203,10 @@ header p {
     );
 
     color: white;
-
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
-
-/* TLAČIDLÁ */
 
 .buttons {
     display: flex;
@@ -265,8 +251,6 @@ header p {
     font-size: 14px;
 }
 
-/* MOBIL */
-
 @media (max-width:600px) {
 
     header h1 {
@@ -294,7 +278,6 @@ header p {
         flex-direction: column;
     }
 }
-
 </style>
 </head>
 
@@ -342,7 +325,7 @@ header p {
 
         <div class="messages" id="messages">
 
-            <!-- LUCIA = VPRAVO -->
+            <!-- LUCIA / JA = VPRAVO -->
 
             <div class="message woman">
 
@@ -355,12 +338,13 @@ header p {
 
             </div>
 
-            <!-- CHLAP = VĽAVO -->
+
+            <!-- CHLAP / ON = VĽAVO -->
 
             <div class="message man">
 
                 <div class="name">
-                    Ty
+                    On
                 </div>
 
                 Ahoj 😊 Mám sa dobre.
@@ -417,10 +401,6 @@ header p {
 </div>
 
 <script>
-
-/* ================================
-   PROFILY
-   ================================ */
 
 const profiles = {
 
@@ -486,11 +466,6 @@ const profiles = {
 
 };
 
-
-/* ================================
-   ZISTENIE PROFILU
-   ================================ */
-
 const params =
     new URLSearchParams(window.location.search);
 
@@ -499,11 +474,6 @@ const profileId =
 
 const profile =
     profiles[profileId] || profiles.Lucia;
-
-
-/* ================================
-   NASTAVENIE PROFILU
-   ================================ */
 
 document.getElementById("profileImage").src =
     profile.image;
@@ -521,9 +491,7 @@ document.getElementById("profileInfo").textContent =
     profile.info;
 
 
-/* ================================
-   KREDITY
-   ================================ */
+/* KREDITY */
 
 const creditKey =
     "spoznajma_credits_" + profile.name;
@@ -543,7 +511,6 @@ if (credits === null) {
 
 credits = Number(credits);
 
-
 function updateCredits() {
 
     document.getElementById("credits")
@@ -554,16 +521,12 @@ function updateCredits() {
 updateCredits();
 
 
-/* ================================
-   ODOSLANIE SPRÁVY
-   ================================ */
+/* ODOSLANIE SPRÁVY CHLAPA / ON */
 
 function sendMessage() {
 
     const input =
-        document.getElementById(
-            "messageInput"
-        );
+        document.getElementById("messageInput");
 
     const text =
         input.value.trim();
@@ -574,9 +537,7 @@ function sendMessage() {
 
     if (credits < 0.5) {
 
-        alert(
-            "Nemáš dostatok kreditov."
-        );
+        alert("Nemáš dostatok kreditov.");
 
         return;
     }
@@ -588,21 +549,19 @@ function sendMessage() {
         credits
     );
 
-
-    /* CHLAP / TY = VĽAVO */
-
     const message =
         document.createElement("div");
 
-    message.className =
-        "message man";
+    /* NATVRDO CHLAP = VĽAVO */
+
+    message.className = "message man";
 
     const name =
         document.createElement("div");
 
     name.className = "name";
 
-    name.textContent = "Ty";
+    name.textContent = "On";
 
     const content =
         document.createElement("div");
@@ -627,9 +586,7 @@ function sendMessage() {
 }
 
 
-/* ================================
-   ODOSLAŤ
-   ================================ */
+/* ODOSLAŤ */
 
 document
     .getElementById("sendButton")
@@ -639,9 +596,7 @@ document
     );
 
 
-/* ================================
-   ENTER
-   ================================ */
+/* ENTER */
 
 document
     .getElementById("messageInput")
@@ -654,16 +609,13 @@ document
                 event.preventDefault();
 
                 sendMessage();
-
             }
 
         }
     );
 
 
-/* ================================
-   PANIC ROOM
-   ================================ */
+/* PANIC ROOM */
 
 function panicRoom() {
 
@@ -672,9 +624,7 @@ function panicRoom() {
 }
 
 
-/* ================================
-   SPÄŤ
-   ================================ */
+/* SPÄŤ */
 
 function goBack() {
 
