@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profily – SpoznajMa ❤️</title>
+
+<title>Chat – SpoznajMa ❤️</title>
 
 <style>
 * {
@@ -14,10 +15,11 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
+
     background-color: #fff8f9;
 
     background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Ctext x='25' y='55' font-size='22' fill='%23d62845' fill-opacity='0.08'%3E♥%3C/text%3E%3Ctext x='125' y='125' font-size='17' fill='%23d62845' fill-opacity='0.06'%3E♥%3C/text%3E%3Ctext x='80' y='160' font-size='13' fill='%23d62845' fill-opacity='0.05'%3E♥%3C/text%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Ctext x='25' y='55' font-size='22' fill='%23d62845' fill-opacity='0.10'%3E♥%3C/text%3E%3Ctext x='125' y='125' font-size='17' fill='%23d62845' fill-opacity='0.07'%3E♥%3C/text%3E%3Ctext x='80' y='160' font-size='13' fill='%23d62845' fill-opacity='0.06'%3E♥%3C/text%3E%3C/svg%3E");
 
     background-repeat: repeat;
     background-size: 180px 180px;
@@ -28,128 +30,217 @@ header {
     background: linear-gradient(135deg,#d41470,#8e3fb4);
     color: white;
     text-align: center;
-    padding: 28px 15px;
+    padding: 25px 15px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 42px;
+    font-size: 36px;
 }
 
 header p {
-    margin: 10px 0 0;
-    font-size: 23px;
+    margin: 8px 0 0;
+    font-size: 19px;
 }
 
-nav {
-    background: rgba(255,255,255,.97);
+.topbar {
+    background: white;
+    padding: 15px;
     display: flex;
-    justify-content: center;
-    gap: 42px;
-    padding: 25px 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     box-shadow: 0 3px 12px rgba(0,0,0,.08);
-    flex-wrap: wrap;
 }
 
-nav a {
-    text-decoration: none;
-    color: #7e32a2;
+.credits {
+    font-size: 19px;
     font-weight: bold;
-    font-size: 23px;
+    color: #8e3fb4;
+}
+
+.back {
+    text-decoration: none;
+    color: #8e3fb4;
+    font-weight: bold;
 }
 
 .container {
-    max-width: 1100px;
-    margin: 45px auto;
-    padding: 0 20px;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 0 15px;
 }
 
-h2.page-title {
-    text-align: center;
-    color: #8b32a9;
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-.profiles {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 28px;
-}
-
-.profile-card {
-    background: rgba(255,255,255,.97);
-    border-radius: 28px;
+.profile {
+    background: white;
+    border-radius: 24px;
     padding: 18px;
-    box-shadow: 0 7px 25px rgba(120,30,60,.10);
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(120,30,60,.10);
+    margin-bottom: 20px;
 }
 
-.profile-card img {
-    width: 100%;
-    height: 360px;
+.profile img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 22px;
-    display: block;
+    border: 4px solid #d41470;
 }
 
-.profile-info {
-    padding: 20px 8px 8px;
+.profile h2 {
+    margin: 10px 0 5px;
+    color: #8e3fb4;
 }
 
-.profile-info h3 {
+.profile p {
     margin: 0;
-    color: #8b32a9;
-    font-size: 30px;
-}
-
-.profile-info p {
-    color: #666;
-    font-size: 21px;
-    margin: 8px 0 18px;
-}
-
-.profile-button {
-    display: block;
-    width: 100%;
-    padding: 17px;
-    border-radius: 16px;
-    background: linear-gradient(135deg,#d41470,#8e3fb4);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-footer {
-    text-align: center;
-    padding: 40px 20px;
     color: #777;
 }
 
-@media (max-width:700px) {
+.chat-box {
+    background: rgba(255,255,255,.96);
+    border-radius: 24px;
+    padding: 20px;
+    min-height: 430px;
+    box-shadow: 0 6px 22px rgba(120,30,60,.10);
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 13px 17px;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* ŽENA VĽAVO */
+.message.woman {
+    align-self: flex-start;
+    background: #f1e8f5;
+    border-bottom-left-radius: 5px;
+}
+
+/* MUŽ VPRAVO */
+.message.man {
+    align-self: flex-end;
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.name {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    opacity: .75;
+}
+
+.input-area {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 16px;
+    border: 2px solid #eadbea;
+    border-radius: 16px;
+    font-size: 17px;
+    outline: none;
+}
+
+.input-area input:focus {
+    border-color: #a53db4;
+}
+
+.send {
+    border: none;
+    border-radius: 16px;
+    padding: 0 22px;
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.send:active {
+    transform: scale(.97);
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.panic {
+    flex: 1;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exit {
+    flex: 1;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    background: #eee;
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.warning {
+    text-align: center;
+    margin-top: 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
     header h1 {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     header p {
-        font-size: 20px;
+        font-size: 17px;
     }
 
-    nav {
-        gap: 24px;
+    .topbar {
+        font-size: 15px;
     }
 
-    nav a {
-        font-size: 19px;
+    .message {
+        max-width: 85%;
+        font-size: 17px;
     }
 
-    .profiles {
-        grid-template-columns: 1fr;
+    .input-area {
+        flex-direction: column;
     }
 
-    .profile-card img {
-        height: 420px;
+    .send {
+        padding: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
     }
 }
 </style>
@@ -162,115 +253,275 @@ footer {
     <p>Virtuálne profily a moderované konverzácie</p>
 </header>
 
-<nav>
-    <a href="index.html">Domov</a>
-    <a href="profily.html">Profily</a>
-    <a href="kredity.html">Kredity</a>
-    <a href="prihlasenie.html">Prihlásenie</a>
-</nav>
+<div class="topbar">
+    <a class="back" href="profily.html">← Profily</a>
+    <div class="credits">
+        Kredity: <span id="credits">2.0</span>
+    </div>
+</div>
 
 <div class="container">
 
-<h2 class="page-title">Profily</h2>
+    <div class="profile">
+        <img id="profileImage" src="images/lucia-1.jpg" alt="Lucia">
 
-<div class="profiles">
+        <h2 id="profileName">Lucia</h2>
 
-<div class="profile-card">
-<img src="images/lucia-1.jpg" alt="Lucia">
-<div class="profile-info">
-<h3>Lucia, 29</h3>
-<p>📍 Bratislava</p>
-<a class="profile-button" href="profil.html?meno=Lucia">Zobraziť profil</a>
-</div>
-</div>
+        <p id="profileInfo">
+            29 rokov · Bratislava
+        </p>
+    </div>
 
-<div class="profile-card">
-<img src="images/nina-1.jpg" alt="Nina">
-<div class="profile-info">
-<h3>Nina, 31</h3>
-<p>📍 Košice</p>
-<a class="profile-button" href="profil.html?meno=Nina">Zobraziť profil</a>
-</div>
-</div>
+    <div class="chat-box">
 
-<div class="profile-card">
-<img src="images/veronika-1.jpg" alt="Veronika">
-<div class="profile-info">
-<h3>Veronika, 27</h3>
-<p>📍 Žilina</p>
-<a class="profile-button" href="profil.html?meno=Veronika">Zobraziť profil</a>
-</div>
-</div>
+        <div class="messages" id="messages">
 
-<div class="profile-card">
-<img src="images/petra-1.jpg" alt="Petra">
-<div class="profile-info">
-<h3>Petra, 34</h3>
-<p>📍 Trnava</p>
-<a class="profile-button" href="profil.html?meno=Petra">Zobraziť profil</a>
-</div>
-</div>
+            <div class="message woman">
+                <div class="name" id="womanName">Lucia</div>
+                Ahoj 😊 Rada ťa spoznávam. Ako sa dnes máš?
+            </div>
 
-<div class="profile-card">
-<img src="images/monika-1.jpg" alt="Monika">
-<div class="profile-info">
-<h3>Monika, 30</h3>
-<p>📍 Nitra</p>
-<a class="profile-button" href="profil.html?meno=Monika">Zobraziť profil</a>
-</div>
-</div>
+            <div class="message man">
+                <div class="name">Ty</div>
+                Ahoj 😊 Mám sa dobre.
+            </div>
 
-<div class="profile-card">
-<img src="images/sandra-1.jpg" alt="Sandra">
-<div class="profile-info">
-<h3>Sandra, 26</h3>
-<p>📍 Banská Bystrica</p>
-<a class="profile-button" href="profil.html?meno=Sandra">Zobraziť profil</a>
-</div>
-</div>
+        </div>
 
-<div class="profile-card">
-<img src="images/katarina-1.jpg" alt="Katarína">
-<div class="profile-info">
-<h3>Katarína, 32</h3>
-<p>📍 Prešov</p>
-<a class="profile-button" href="profil.html?meno=Katarína">Zobraziť profil</a>
-</div>
-</div>
+        <div class="input-area">
 
-<div class="profile-card">
-<img src="images/simona-1.jpg" alt="Simona">
-<div class="profile-info">
-<h3>Simona, 28</h3>
-<p>📍 Poprad</p>
-<a class="profile-button" href="profil.html?meno=Simona">Zobraziť profil</a>
-</div>
-</div>
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Napíš správu..."
+                autocomplete="off"
+            >
 
-<div class="profile-card">
-<img src="images/alexandra-1.jpg" alt="Alexandra">
-<div class="profile-info">
-<h3>Alexandra, 30</h3>
-<p>📍 Trenčín · Trans žena</p>
-<a class="profile-button" href="profil.html?meno=Alexandra">Zobraziť profil</a>
-</div>
-</div>
+            <button class="send" id="sendButton">
+                Odoslať
+            </button>
 
-<div class="profile-card">
-<img src="images/bianka-1.jpg" alt="Bianka">
-<div class="profile-info">
-<h3>Bianka, 28</h3>
-<p>📍 Zvolen · Bisexuálna žena</p>
-<a class="profile-button" href="profil.html?meno=Bianka">Zobraziť profil</a>
-</div>
-</div>
+        </div>
+
+        <div class="buttons">
+
+            <button class="panic" onclick="panicRoom()">
+                🚨 Panic Room
+            </button>
+
+            <button class="exit" onclick="goBack()">
+                ← Späť na profil
+            </button>
+
+        </div>
+
+        <div class="warning">
+            Jedna odoslaná správa stojí 0,5 kreditu.
+        </div>
+
+    </div>
 
 </div>
-</div>
 
-<footer>
-© 2026 SpoznajMa
-</footer>
+<script>
+
+const profiles = {
+
+    Lucia: {
+        name: "Lucia",
+        info: "29 rokov · Bratislava",
+        image: "images/lucia-1.jpg"
+    },
+
+    Nina: {
+        name: "Nina",
+        info: "31 rokov · Košice",
+        image: "images/nina-1.jpg"
+    },
+
+    Veronika: {
+        name: "Veronika",
+        info: "27 rokov · Žilina",
+        image: "images/veronika-1.jpg"
+    },
+
+    Petra: {
+        name: "Petra",
+        info: "34 rokov · Trnava",
+        image: "images/petra-1.jpg"
+    },
+
+    Monika: {
+        name: "Monika",
+        info: "30 rokov · Nitra",
+        image: "images/monika-1.jpg"
+    },
+
+    Sandra: {
+        name: "Sandra",
+        info: "26 rokov · Banská Bystrica",
+        image: "images/sandra-1.jpg"
+    },
+
+    Katarína: {
+        name: "Katarína",
+        info: "32 rokov · Prešov",
+        image: "images/katarina-1.jpg"
+    },
+
+    Simona: {
+        name: "Simona",
+        info: "28 rokov · Poprad",
+        image: "images/simona-1.jpg"
+    },
+
+    Alexandra: {
+        name: "Alexandra",
+        info: "30 rokov · Trenčín · Trans žena",
+        image: "images/alexandra-1.jpg"
+    },
+
+    Bianka: {
+        name: "Bianka",
+        info: "28 rokov · Zvolen · Bisexuálna žena",
+        image: "images/bianka-1.jpg"
+    }
+
+};
+
+const params = new URLSearchParams(window.location.search);
+
+const profileId = params.get("meno") || "Lucia";
+
+const profile = profiles[profileId] || profiles.Lucia;
+
+document.getElementById("profileName").textContent = profile.name;
+document.getElementById("womanName").textContent = profile.name;
+document.getElementById("profileInfo").textContent = profile.info;
+document.getElementById("profileImage").src = profile.image;
+
+
+/* KREDITY */
+
+const creditKey = "spoznajma_credits_" + profile.name;
+
+let credits = localStorage.getItem(creditKey);
+
+if (credits === null) {
+    credits = 2;
+    localStorage.setItem(creditKey, credits);
+}
+
+credits = Number(credits);
+
+function updateCredits() {
+    document.getElementById("credits").textContent =
+        credits.toFixed(1);
+}
+
+updateCredits();
+
+
+/* ODOSLANIE SPRÁVY */
+
+function sendMessage() {
+
+    const input = document.getElementById("messageInput");
+
+    const text = input.value.trim();
+
+    if (!text) {
+        return;
+    }
+
+    if (credits < 0.5) {
+
+        alert("Nemáš dostatok kreditov.");
+
+        return;
+    }
+
+    credits -= 0.5;
+
+    localStorage.setItem(
+        creditKey,
+        credits
+    );
+
+    const message = document.createElement("div");
+
+    message.className = "message man";
+
+    message.innerHTML =
+        '<div class="name">Ty</div>' +
+        escapeHtml(text);
+
+    document
+        .getElementById("messages")
+        .appendChild(message);
+
+    input.value = "";
+
+    updateCredits();
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+
+/* OCHRANA TEXTU */
+
+function escapeHtml(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+/* ENTER */
+
+document
+    .getElementById("messageInput")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            event.preventDefault();
+
+            sendMessage();
+        }
+
+    });
+
+
+document
+    .getElementById("sendButton")
+    .addEventListener("click", sendMessage);
+
+
+/* PANIC ROOM */
+
+function panicRoom() {
+
+    window.location.href = "profily.html";
+}
+
+
+/* SPÄŤ */
+
+function goBack() {
+
+    window.location.href =
+        "profil.html?meno=" +
+        encodeURIComponent(profile.name);
+}
+
+</script>
 
 </body>
 </html>
