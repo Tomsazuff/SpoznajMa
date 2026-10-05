@@ -13,12 +13,43 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f8f5fa;
+    background-color: #fff7f8;
     color: #333;
+    min-height: 100vh;
+
+    background-image:
+        radial-gradient(circle at 10% 15%, rgba(210,35,65,.07) 0 3px, transparent 4px),
+        radial-gradient(circle at 80% 25%, rgba(210,35,65,.06) 0 3px, transparent 4px),
+        radial-gradient(circle at 25% 70%, rgba(210,35,65,.06) 0 3px, transparent 4px),
+        radial-gradient(circle at 90% 80%, rgba(210,35,65,.07) 0 3px, transparent 4px),
+        linear-gradient(135deg,#fff8f9,#fff1f3);
+
+    background-size:
+        150px 150px,
+        190px 190px,
+        170px 170px,
+        210px 210px,
+        100% 100%;
+
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "♥     ♡          ♥       ♡     ♥          ♡";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    color: rgba(210,35,65,.045);
+    font-size: 28px;
+    line-height: 120px;
+    letter-spacing: 20px;
+    word-spacing: 25px;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 header {
-    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
     color: white;
     text-align: center;
     padding: 28px 15px;
@@ -35,7 +66,7 @@ header p {
 }
 
 nav {
-    background: white;
+    background: rgba(255,255,255,.97);
     display: flex;
     justify-content: center;
     gap: 42px;
@@ -66,15 +97,15 @@ h2.page-title {
 
 .profiles {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 28px;
 }
 
 .profile-card {
-    background: white;
+    background: rgba(255,255,255,.97);
     border-radius: 28px;
     padding: 18px;
-    box-shadow: 0 7px 25px rgba(0,0,0,.08);
+    box-shadow: 0 7px 25px rgba(120,30,60,.10);
 }
 
 .profile-card img {
@@ -106,7 +137,7 @@ h2.page-title {
     width: 100%;
     padding: 17px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    background: linear-gradient(135deg,#d41470,#8e3fb4);
     color: white;
     text-align: center;
     text-decoration: none;
@@ -120,7 +151,8 @@ footer {
     color: #777;
 }
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
+
     header h1 {
         font-size: 36px;
     }
@@ -173,7 +205,9 @@ footer {
             <div class="profile-info">
                 <h3>Lucia, 29</h3>
                 <p>📍 Bratislava</p>
-                <a class="profile-button" href="profil.html?meno=Lucia">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Lucia">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -182,7 +216,9 @@ footer {
             <div class="profile-info">
                 <h3>Nina, 31</h3>
                 <p>📍 Košice</p>
-                <a class="profile-button" href="profil.html?meno=Nina">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Nina">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -191,7 +227,9 @@ footer {
             <div class="profile-info">
                 <h3>Veronika, 27</h3>
                 <p>📍 Žilina</p>
-                <a class="profile-button" href="profil.html?meno=Veronika">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Veronika">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -200,7 +238,9 @@ footer {
             <div class="profile-info">
                 <h3>Petra, 34</h3>
                 <p>📍 Trnava</p>
-                <a class="profile-button" href="profil.html?meno=Petra">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Petra">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -209,7 +249,9 @@ footer {
             <div class="profile-info">
                 <h3>Monika, 30</h3>
                 <p>📍 Nitra</p>
-                <a class="profile-button" href="profil.html?meno=Monika">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Monika">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -218,7 +260,9 @@ footer {
             <div class="profile-info">
                 <h3>Sandra, 26</h3>
                 <p>📍 Banská Bystrica</p>
-                <a class="profile-button" href="profil.html?meno=Sandra">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Sandra">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -227,7 +271,9 @@ footer {
             <div class="profile-info">
                 <h3>Katarína, 32</h3>
                 <p>📍 Prešov</p>
-                <a class="profile-button" href="profil.html?meno=Katarína">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Katarína">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -236,7 +282,9 @@ footer {
             <div class="profile-info">
                 <h3>Simona, 28</h3>
                 <p>📍 Poprad</p>
-                <a class="profile-button" href="profil.html?meno=Simona">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Simona">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -245,7 +293,9 @@ footer {
             <div class="profile-info">
                 <h3>Alexandra, 30</h3>
                 <p>📍 Trenčín · Trans žena</p>
-                <a class="profile-button" href="profil.html?meno=Alexandra">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Alexandra">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
@@ -254,7 +304,9 @@ footer {
             <div class="profile-info">
                 <h3>Bianka, 28</h3>
                 <p>📍 Zvolen · Bisexuálna žena</p>
-                <a class="profile-button" href="profil.html?meno=Bianka">Zobraziť profil</a>
+                <a class="profile-button" href="profil.html?meno=Bianka">
+                    Zobraziť profil
+                </a>
             </div>
         </div>
 
