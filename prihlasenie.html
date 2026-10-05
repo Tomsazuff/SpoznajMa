@@ -1,109 +1,242 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prihlásenie – SpoznajMa</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prihlásenie | SpoznajMa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4f8;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d81b60, #8e24aa);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+    }
+
+    header p {
+      margin: 0;
+    }
+
+    nav {
+      background: white;
+      padding: 13px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      margin: 0 8px;
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+
+    h2 {
+      text-align: center;
+      color: #8e24aa;
+      margin-top: 0;
+    }
+
+    .notice {
+      background: #fff3cd;
+      border: 1px solid #ffe69c;
+      color: #664d03;
+      padding: 14px;
+      border-radius: 12px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #8e24aa;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d81b60, #8e24aa);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    .register {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .register a {
+      color: #8e24aa;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="logo">SpoznajMa</div>
-
-    <nav>
-        <a href="index.html">Domov</a>
-        <a href="profily.html">Profily</a>
-        <a href="registracia.html" class="nav-button">Registrácia</a>
-    </nav>
+<header>
+  <h1>SpoznajMa ❤️</h1>
+  <p>Prihlás sa do svojho účtu</p>
 </header>
 
-<main>
+<nav>
+  <a href="index.html">Domov</a>
+  <a href="profily.html">Profily</a>
+  <a href="kredity.html">Kredity</a>
+  <a href="registracia.html">Registrácia</a>
+</nav>
 
-<section class="form-section">
+<div class="container">
 
-    <div class="form-card">
+  <div class="box">
 
-        <h1>Prihlásenie</h1>
+    <h2>Prihlásenie</h2>
 
-        <p>
-            Prihlás sa do svojho účtu.
-        </p>
-
-        <form id="loginForm">
-
-            <label for="email">
-                E-mail
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                required
-                placeholder="tvoj@email.sk"
-            >
-
-            <label for="password">
-                Heslo
-            </label>
-
-            <input
-                type="password"
-                id="password"
-                required
-                placeholder="Tvoje heslo"
-            >
-
-            <button type="submit" class="button">
-                Prihlásiť sa
-            </button>
-
-        </form>
-
-        <p id="loginMessage"></p>
-
-        <p class="form-footer">
-            Ešte nemáš účet?
-            <a href="registracia.html">
-                Zaregistrovať sa
-            </a>
-        </p>
-
+    <div class="notice">
+      Prihlás sa do svojho účtu a pokračuj v používaní služby SpoznajMa.
     </div>
 
-</section>
+    <form id="loginForm">
 
-</main>
+      <label for="email">E-mail</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="tvoj@email.sk"
+        required
+      >
+
+      <label for="password">Heslo</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Tvoje heslo"
+        required
+      >
+
+      <button type="submit">
+        Prihlásiť sa
+      </button>
+
+      <div id="message"></div>
+
+    </form>
+
+    <div class="register">
+      Ešte nemáš účet?
+      <a href="registracia.html">Vytvoriť účet</a>
+    </div>
+
+  </div>
+
+</div>
 
 <footer>
-
-    <div class="footer-logo">
-        SpoznajMa
-    </div>
-
-    <p>© 2026 SpoznajMa</p>
-
+  © 2026 SpoznajMa · Virtuálne profily · Moderovaná komunikácia
 </footer>
 
 <script>
+  const form = document.getElementById("loginForm");
+  const message = document.getElementById("message");
 
-document
-    .getElementById("loginForm")
-    .addEventListener("submit", function(event) {
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        event.preventDefault();
+    const email = document.getElementById("email").value.trim();
 
-        const message =
-            document.getElementById("loginMessage");
+    const userData = localStorage.getItem("spoznajma_user");
 
-        message.textContent =
-            "Prihlásenie pripravíme po pripojení servera a databázy.";
+    if (!userData) {
+      message.textContent = "Účet zatiaľ neexistuje. Najprv sa zaregistruj.";
+      message.style.color = "#c62828";
+      return;
+    }
 
-        message.style.color = "#d63384";
+    const user = JSON.parse(userData);
 
-    });
+    if (email !== user.email) {
+      message.textContent = "Účet s týmto e-mailom nebol nájdený.";
+      message.style.color = "#c62828";
+      return;
+    }
 
+    localStorage.setItem("spoznajma_logged_in", "true");
+
+    message.textContent = "Prihlásenie úspešné.";
+    message.style.color = "#2e7d32";
+
+    setTimeout(function() {
+      window.location.href = "index.html";
+    }, 1000);
+  });
 </script>
 
 </body>
