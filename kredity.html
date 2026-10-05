@@ -1,269 +1,283 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kredity | SpoznajMa</title>
 
-    <title>Kredity – SpoznajMa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" href="style.css">
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4f8;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d81b60, #8e24aa);
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    nav {
+      background: white;
+      padding: 13px 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      margin: 0 8px;
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      color: #8e24aa;
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .intro p {
+      color: #666;
+      margin: 0;
+    }
+
+    .info {
+      background: #fff3cd;
+      border: 1px solid #ffe69c;
+      color: #664d03;
+      padding: 14px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .credits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+      border: 1px solid #eee;
+    }
+
+    .card.featured {
+      border: 2px solid #d81b60;
+      transform: scale(1.02);
+    }
+
+    .coin {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 5px 0;
+      color: #8e24aa;
+      font-size: 23px;
+    }
+
+    .price {
+      font-size: 27px;
+      font-weight: bold;
+      color: #d81b60;
+      margin: 10px 0 18px;
+    }
+
+    .messages {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .buy {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #d81b60, #8e24aa);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .buy:hover {
+      opacity: 0.92;
+    }
+
+    .note {
+      background: white;
+      border-radius: 15px;
+      padding: 18px;
+      margin-top: 25px;
+      text-align: center;
+      color: #666;
+      line-height: 1.5;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .credits {
+        grid-template-columns: 1fr;
+      }
+
+      .card.featured {
+        transform: none;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-
-    <div class="logo">
-        SpoznajMa
-    </div>
-
-    <nav>
-        <a href="index.html">Domov</a>
-        <a href="profily.html">Profily</a>
-        <a href="prihlasenie.html">Prihlásenie</a>
-    </nav>
-
+<header>
+  <h1>❤️ SpoznajMa ❤️</h1>
+  <p>Príjemné rozhovory</p>
 </header>
 
-
-<main>
-
-<section class="credits-page">
-
-    <div class="credits-container">
-
-        <h1>Kredity</h1>
-
-        <p class="credits-intro">
-            Kredity používaš na odosielanie správ
-            v konverzáciách.
-        </p>
-
-
-        <div class="current-credits">
-
-            <span>Aktuálny zostatok</span>
-
-            <strong id="currentCredits">
-                2
-            </strong>
-
-            <small>
-                kredity
-            </small>
-
-        </div>
-
-
-        <div class="credit-info">
-
-            <h2>Ako fungujú kredity?</h2>
-
-            <p>
-                Jedna odoslaná správa stojí
-                <strong>0,5 kreditu</strong>.
-            </p>
-
-            <p>
-                Jeden kredit teda umožňuje odoslať
-                2 správy.
-            </p>
-
-        </div>
-
-
-        <div class="credit-packages">
-
-
-            <!-- 1 € -->
-
-            <div class="credit-package">
-
-                <h2>1 kredit</h2>
-
-                <div class="package-price">
-                    1 €
-                </div>
-
-                <p>
-                    2 správy
-                </p>
-
-                <button
-                    class="button"
-                    onclick="selectPackage(1)"
-                >
-                    Vybrať
-                </button>
-
-            </div>
-
-
-            <!-- 5 € -->
-
-            <div class="credit-package">
-
-                <h2>5 kreditov</h2>
-
-                <div class="package-price">
-                    5 €
-                </div>
-
-                <p>
-                    10 správ
-                </p>
-
-                <button
-                    class="button"
-                    onclick="selectPackage(5)"
-                >
-                    Vybrať
-                </button>
-
-            </div>
-
-
-            <!-- 10 € -->
-
-            <div class="credit-package">
-
-                <h2>10 kreditov</h2>
-
-                <div class="package-price">
-                    10 €
-                </div>
-
-                <p>
-                    20 správ
-                </p>
-
-                <button
-                    class="button"
-                    onclick="selectPackage(10)"
-                >
-                    Vybrať
-                </button>
-
-            </div>
-
-
-            <!-- 20 € -->
-
-            <div class="credit-package">
-
-                <h2>20 kreditov</h2>
-
-                <div class="package-price">
-                    20 €
-                </div>
-
-                <p>
-                    40 správ
-                </p>
-
-                <button
-                    class="button"
-                    onclick="selectPackage(20)"
-                >
-                    Vybrať
-                </button>
-
-            </div>
-
-
-            <!-- 50 € -->
-
-            <div class="credit-package">
-
-                <h2>50 kreditov</h2>
-
-                <div class="package-price">
-                    50 €
-                </div>
-
-                <p>
-                    100 správ
-                </p>
-
-                <button
-                    class="button"
-                    onclick="selectPackage(50)"
-                >
-                    Vybrať
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div id="packageMessage" class="package-message">
-
-        </div>
-
-
-        <div class="payment-notice">
-
-            <strong>Platby</strong>
-
-            <p>
-                Platobný systém zatiaľ nie je aktivovaný.
-                Po jeho zapojení bude platba spracovaná
-                bezpečným platobným poskytovateľom.
-            </p>
-
-            <p>
-                Kredity sa pripíšu až po potvrdení úspešnej
-                platby.
-            </p>
-
-        </div>
-
+<nav>
+  <a href="index.html">Domov</a>
+  <a href="profily.html">Profily</a>
+  <a href="kredity.html">Kredity</a>
+  <a href="registracia.html">Registrácia</a>
+  <a href="prihlasenie.html">Prihlásenie</a>
+</nav>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>Kredity</h2>
+    <p>Vyber si balík, ktorý ti vyhovuje.</p>
+  </div>
+
+  <div class="info">
+    <strong>1 kredit = 2 správy</strong><br>
+    Za každú správu sa odpočíta 0,5 kreditu.
+  </div>
+
+  <div class="credits">
+
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>1 kredit</h3>
+      <div class="price">1 €</div>
+      <div class="messages">2 správy</div>
+      <button class="buy" onclick="buyCredits(1)">
+        Kúpiť
+      </button>
     </div>
 
-</section>
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>5 kreditov</h3>
+      <div class="price">5 €</div>
+      <div class="messages">10 správ</div>
+      <button class="buy" onclick="buyCredits(5)">
+        Kúpiť
+      </button>
+    </div>
 
-</main>
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>10 kreditov</h3>
+      <div class="price">10 €</div>
+      <div class="messages">20 správ</div>
+      <button class="buy" onclick="buyCredits(10)">
+        Kúpiť
+      </button>
+    </div>
 
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>20 kreditov</h3>
+      <div class="price">20 €</div>
+      <div class="messages">40 správ</div>
+      <button class="buy" onclick="buyCredits(20)">
+        Kúpiť
+      </button>
+    </div>
+
+    <div class="card featured">
+      <div class="coin">🪙</div>
+      <h3>50 kreditov</h3>
+      <div class="price">50 €</div>
+      <div class="messages">100 správ</div>
+      <button class="buy" onclick="buyCredits(50)">
+        Kúpiť
+      </button>
+    </div>
+
+  </div>
+
+  <div class="note">
+    Platba bude pripojená neskôr. Po úspešnej platbe sa kredity
+    automaticky pripíšu k účtu.
+  </div>
+
+</div>
 
 <footer>
-
-    <div class="footer-logo">
-        SpoznajMa
-    </div>
-
-    <p>
-        © 2026 SpoznajMa
-    </p>
-
-    <p>
-        Virtuálne profily a moderované konverzácie.
-    </p>
-
+  © 2026 SpoznajMa · Podmienky služby · Ochrana súkromia
 </footer>
 
-
 <script>
-
-function selectPackage(amount) {
-
-    const message =
-        document.getElementById("packageMessage");
-
-
-    message.textContent =
-        "Vybral si balík " +
-        amount +
-        " " +
-        (amount === 1 ? "kredit" : "kreditov") +
-        ". Platbu zatiaľ nemožno dokončiť, pretože platobný systém ešte nie je pripojený.";
-
-
-    message.style.color =
-        "#d63384";
-
-}
-
+  function buyCredits(amount) {
+    alert(
+      "Vybral si " +
+      amount +
+      (amount === 1 ? " kredit." : " kreditov.") +
+      " Platba bude pripojená neskôr."
+    );
+  }
 </script>
 
 </body>
