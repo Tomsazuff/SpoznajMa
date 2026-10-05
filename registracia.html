@@ -1,218 +1,292 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrácia – SpoznajMa</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrácia | SpoznajMa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4f8;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d81b60, #8e24aa);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+    }
+
+    header p {
+      margin: 0;
+    }
+
+    nav {
+      background: white;
+      padding: 13px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      margin: 0 8px;
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+
+    h2 {
+      text-align: center;
+      color: #8e24aa;
+      margin-top: 0;
+    }
+
+    .notice {
+      background: #fff3cd;
+      border: 1px solid #ffe69c;
+      color: #664d03;
+      padding: 14px;
+      border-radius: 12px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #8e24aa;
+    }
+
+    .checkbox {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 18px 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .checkbox input {
+      width: auto;
+      margin-top: 3px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d81b60, #8e24aa);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .login a {
+      color: #8e24aa;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-
-    <div class="logo">
-        SpoznajMa
-    </div>
-
-    <nav>
-        <a href="index.html">Domov</a>
-        <a href="profily.html">Profily</a>
-        <a href="prihlasenie.html">Prihlásenie</a>
-    </nav>
-
+<header>
+  <h1>SpoznajMa ❤️</h1>
+  <p>Vytvor si účet</p>
 </header>
 
+<nav>
+  <a href="index.html">Domov</a>
+  <a href="profily.html">Profily</a>
+  <a href="kredity.html">Kredity</a>
+  <a href="prihlasenie.html">Prihlásenie</a>
+</nav>
 
-<main>
+<div class="container">
 
-<section class="form-section">
+  <div class="box">
 
-    <div class="form-card">
+    <h2>Registrácia</h2>
 
-        <h1>Vytvor si účet</h1>
-
-        <p>
-            Registrácia je určená iba pre osoby staršie ako 18 rokov.
-        </p>
-
-        <form id="registerForm">
-
-            <label for="username">
-                Používateľské meno
-            </label>
-
-            <input
-                type="text"
-                id="username"
-                required
-                minlength="3"
-                maxlength="30"
-                placeholder="Tvoje používateľské meno"
-            >
-
-
-            <label for="email">
-                E-mail
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                required
-                placeholder="tvoj@email.sk"
-            >
-
-
-            <label for="password">
-                Heslo
-            </label>
-
-            <input
-                type="password"
-                id="password"
-                required
-                minlength="6"
-                placeholder="Minimálne 6 znakov"
-            >
-
-
-            <label for="password2">
-                Zopakuj heslo
-            </label>
-
-            <input
-                type="password"
-                id="password2"
-                required
-                minlength="6"
-                placeholder="Zopakuj heslo"
-            >
-
-
-            <label class="checkbox">
-
-                <input
-                    type="checkbox"
-                    id="age"
-                    required
-                >
-
-                Mám najmenej 18 rokov.
-
-            </label>
-
-
-            <label class="checkbox">
-
-                <input
-                    type="checkbox"
-                    id="terms"
-                    required
-                >
-
-                Súhlasím s podmienkami používania
-                a ochranou osobných údajov.
-
-            </label>
-
-
-            <button type="submit" class="button">
-                Vytvoriť účet
-            </button>
-
-        </form>
-
-
-        <p id="registerMessage"></p>
-
-
-        <p class="form-footer">
-
-            Už máš účet?
-
-            <a href="prihlasenie.html">
-                Prihlásiť sa
-            </a>
-
-        </p>
-
+    <div class="notice">
+      <strong>Dôležité:</strong> SpoznajMa používa virtuálne profily
+      a moderovanú komunikáciu. Registráciou potvrdzuješ, že si oboznámený
+      s charakterom služby.
     </div>
 
-</section>
+    <form id="registerForm">
 
-</main>
+      <label for="name">Meno alebo prezývka</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Tvoje meno alebo prezývka"
+        required
+      >
 
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="tvoj@email.sk"
+        required
+      >
+
+      <label for="password">Heslo</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Minimálne 8 znakov"
+        minlength="8"
+        required
+      >
+
+      <label for="password2">Zopakuj heslo</label>
+      <input
+        type="password"
+        id="password2"
+        placeholder="Zopakuj heslo"
+        minlength="8"
+        required
+      >
+
+      <div class="checkbox">
+        <input type="checkbox" id="age" required>
+        <label for="age">
+          Potvrdzujem, že mám najmenej 18 rokov.
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">
+          Súhlasím s podmienkami služby a rozumiem, že profily sú virtuálne
+          a komunikácia je moderovaná.
+        </label>
+      </div>
+
+      <button type="submit">
+        Vytvoriť účet
+      </button>
+
+      <div id="message"></div>
+
+    </form>
+
+    <div class="login">
+      Už máš účet?
+      <a href="prihlasenie.html">Prihlásiť sa</a>
+    </div>
+
+  </div>
+
+</div>
 
 <footer>
-
-    <div class="footer-logo">
-        SpoznajMa
-    </div>
-
-    <p>
-        © 2026 SpoznajMa
-    </p>
-
+  © 2026 SpoznajMa · Virtuálne profily · Moderovaná komunikácia
 </footer>
 
-
 <script>
+  const form = document.getElementById("registerForm");
+  const message = document.getElementById("message");
 
-const registerForm =
-    document.getElementById("registerForm");
-
-const message =
-    document.getElementById("registerMessage");
-
-
-registerForm.addEventListener("submit", function(event) {
-
+  form.addEventListener("submit", function(event) {
     event.preventDefault();
 
-
-    const username =
-        document.getElementById("username").value.trim();
-
-    const email =
-        document.getElementById("email").value.trim();
-
-    const password =
-        document.getElementById("password").value;
-
-    const password2 =
-        document.getElementById("password2").value;
-
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const password2 = document.getElementById("password2").value;
 
     if (password !== password2) {
-
-        message.textContent =
-            "Heslá sa nezhodujú.";
-
-        message.style.color = "red";
-
-        return;
+      message.textContent = "Heslá sa nezhodujú.";
+      message.style.color = "#c62828";
+      return;
     }
 
+    if (password.length < 8) {
+      message.textContent = "Heslo musí mať minimálne 8 znakov.";
+      message.style.color = "#c62828";
+      return;
+    }
 
-    /*
-       Toto je zatiaľ iba vzhľad registračného formulára.
+    const user = {
+      name: name,
+      email: email
+    };
 
-       Skutočné vytvorenie účtu musí neskôr
-       robiť server a databáza.
+    localStorage.setItem("spoznajma_user", JSON.stringify(user));
 
-       Heslá nikdy nebudeme ukladať
-       priamo do HTML alebo localStorage.
-    */
+    message.textContent = "Registrácia bola uložená.";
+    message.style.color = "#2e7d32";
 
-
-    message.textContent =
-        "Registrácia je pripravená. Skutočné vytvorenie účtu pridáme po pripojení servera.";
-
-    message.style.color = "green";
-
-});
-
+    setTimeout(function() {
+      window.location.href = "prihlasenie.html";
+    }, 1200);
+  });
 </script>
 
 </body>
