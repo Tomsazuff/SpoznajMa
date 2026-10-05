@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrácia – SpoznajMa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        SpoznajMa
+    </div>
+
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="profily.html">Profily</a>
+        <a href="prihlasenie.html">Prihlásenie</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <h1>Vytvor si účet</h1>
+
+        <p>
+            Registrácia je určená iba pre osoby staršie ako 18 rokov.
+        </p>
+
+        <form id="registerForm">
+
+            <label for="username">
+                Používateľské meno
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                required
+                minlength="3"
+                maxlength="30"
+                placeholder="Tvoje používateľské meno"
+            >
+
+
+            <label for="email">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                required
+                placeholder="tvoj@email.sk"
+            >
+
+
+            <label for="password">
+                Heslo
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                required
+                minlength="6"
+                placeholder="Minimálne 6 znakov"
+            >
+
+
+            <label for="password2">
+                Zopakuj heslo
+            </label>
+
+            <input
+                type="password"
+                id="password2"
+                required
+                minlength="6"
+                placeholder="Zopakuj heslo"
+            >
+
+
+            <label class="checkbox">
+
+                <input
+                    type="checkbox"
+                    id="age"
+                    required
+                >
+
+                Mám najmenej 18 rokov.
+
+            </label>
+
+
+            <label class="checkbox">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required
+                >
+
+                Súhlasím s podmienkami používania
+                a ochranou osobných údajov.
+
+            </label>
+
+
+            <button type="submit" class="button">
+                Vytvoriť účet
+            </button>
+
+        </form>
+
+
+        <p id="registerMessage"></p>
+
+
+        <p class="form-footer">
+
+            Už máš účet?
+
+            <a href="prihlasenie.html">
+                Prihlásiť sa
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        SpoznajMa
+    </div>
+
+    <p>
+        © 2026 SpoznajMa
+    </p>
+
+</footer>
+
+
+<script>
+
+const registerForm =
+    document.getElementById("registerForm");
+
+const message =
+    document.getElementById("registerMessage");
+
+
+registerForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const password2 =
+        document.getElementById("password2").value;
+
+
+    if (password !== password2) {
+
+        message.textContent =
+            "Heslá sa nezhodujú.";
+
+        message.style.color = "red";
+
+        return;
+    }
+
+
+    /*
+       Toto je zatiaľ iba vzhľad registračného formulára.
+
+       Skutočné vytvorenie účtu musí neskôr
+       robiť server a databáza.
+
+       Heslá nikdy nebudeme ukladať
+       priamo do HTML alebo localStorage.
+    */
+
+
+    message.textContent =
+        "Registrácia je pripravená. Skutočné vytvorenie účtu pridáme po pripojení servera.";
+
+    message.style.color = "green";
+
+});
+
+</script>
+
+</body>
+</html>
