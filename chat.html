@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Konverzácia – SpoznajMa</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        SpoznajMa
+    </div>
+
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="profily.html">Profily</a>
+        <a href="prihlasenie.html">Prihlásenie</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="chat-page">
+
+    <div class="chat-container">
+
+
+        <!-- HORNÁ ČASŤ CHatu -->
+
+        <div class="chat-header">
+
+            <div>
+
+                <h1 id="chatProfileName">
+                    Lucia, 29
+                </h1>
+
+                <p id="chatProfileCity">
+                    📍 Bratislava
+                </p>
+
+            </div>
+
+            <span class="online">
+                ● Online
+            </span>
+
+        </div>
+
+
+        <!-- UPOZORNENIE -->
+
+        <div class="chat-notice">
+
+            <strong>Virtuálny profil</strong>
+
+            <p>
+                Tento profil je virtuálny a konverzácie
+                sú moderované naším tímom.
+            </p>
+
+        </div>
+
+
+        <!-- SPRÁVY -->
+
+        <div id="messages" class="messages">
+
+            <div class="message received">
+
+                <div class="message-name">
+                    Lucia
+                </div>
+
+                <p>
+                    Ahoj 😊 Som rada, že si napísal.
+                </p>
+
+                <span class="message-time">
+                    teraz
+                </span>
+
+            </div>
+
+
+            <div class="message sent">
+
+                <div class="message-name">
+                    Ty
+                </div>
+
+                <p>
+                    Ahoj, rád ťa spoznávam.
+                </p>
+
+                <span class="message-time">
+                    teraz
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- KREDITY -->
+
+        <div class="credits-bar">
+
+            <span>
+                Kredity:
+                <strong id="credits">
+                    2
+                </strong>
+            </span>
+
+            <a href="kredity.html">
+                Kúpiť kredity
+            </a>
+
+        </div>
+
+
+        <!-- POSIELANIE SPRÁVY -->
+
+        <form id="messageForm" class="message-form">
+
+            <textarea
+                id="messageInput"
+                placeholder="Napíš správu..."
+                maxlength="1000"
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="button"
+            >
+                Odoslať
+            </button>
+
+        </form>
+
+
+        <!-- PANIC ROOM -->
+
+        <button
+            id="panicButton"
+            class="panic-button"
+            type="button"
+        >
+            🚨 PANIC ROOM
+        </button>
+
+
+        <p class="chat-info">
+            Každá odoslaná správa spotrebuje
+            0,5 kreditu.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        SpoznajMa
+    </div>
+
+    <p>
+        © 2026 SpoznajMa
+    </p>
+
+</footer>
+
+
+<script>
+
+let credits = 2;
+
+const messages =
+    document.getElementById("messages");
+
+const messageForm =
+    document.getElementById("messageForm");
+
+const messageInput =
+    document.getElementById("messageInput");
+
+const creditsText =
+    document.getElementById("credits");
+
+
+messageForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        const text =
+            messageInput.value.trim();
+
+
+        if (!text) {
+            return;
+        }
+
+
+        /*
+         * Zatiaľ iba vizuálna ukážka.
+         * Skutočný kreditový systém bude
+         * neskôr riešený na serveri.
+         */
+
+
+        if (credits < 0.5) {
+
+            alert(
+                "Nemáš dostatok kreditov."
+            );
+
+            return;
+        }
+
+
+        credits -= 0.5;
+
+        creditsText.textContent =
+            credits.toFixed(1);
+
+
+        const message =
+            document.createElement("div");
+
+        message.className =
+            "message sent";
+
+
+        const name =
+            document.createElement("div");
+
+        name.className =
+            "message-name";
+
+        name.textContent =
+            "Ty";
+
+
+        const paragraph =
+            document.createElement("p");
+
+        paragraph.textContent =
+            text;
+
+
+        const time =
+            document.createElement("span");
+
+        time.className =
+            "message-time";
+
+        time.textContent =
+            "teraz";
+
+
+        message.appendChild(name);
+
+        message.appendChild(paragraph);
+
+        message.appendChild(time);
+
+
+        messages.appendChild(message);
+
+
+        messageInput.value = "";
+
+
+        messages.scrollTop =
+            messages.scrollHeight;
+
+    }
+);
+
+
+
+/*
+ * PANIC ROOM
+ *
+ * Zatiaľ ukončí aktuálnu stránku.
+ * Neskôr ho napojíme na server,
+ * aby sa konverzácia okamžite ukončila
+ * a zaznamenala v administrácii.
+ */
+
+document
+    .getElementById("panicButton")
+    .addEventListener(
+        "click",
+        function() {
+
+            const confirmed =
+                confirm(
+                    "Naozaj chceš okamžite ukončiť konverzáciu?"
+                );
+
+
+            if (confirmed) {
+
+                window.location.href =
+                    "index.html";
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
