@@ -15,13 +15,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #fff5f8;
+
+    background-color: #fff3f6;
 
     background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Ctext x='15' y='50' font-size='30' fill='%23d62845' fill-opacity='0.24'%3E♥%3C/text%3E%3Ctext x='105' y='105' font-size='23' fill='%23d62845' fill-opacity='0.19'%3E♥%3C/text%3E%3Ctext x='55' y='140' font-size='17' fill='%23d62845' fill-opacity='0.15'%3E♥%3C/text%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Ctext x='10' y='55' font-size='38' fill='%23e0003b' fill-opacity='0.38'%3E♥%3C/text%3E%3Ctext x='92' y='105' font-size='30' fill='%23e0003b' fill-opacity='0.32'%3E♥%3C/text%3E%3Ctext x='48' y='135' font-size='24' fill='%23e0003b' fill-opacity='0.27'%3E♥%3C/text%3E%3C/svg%3E");
 
     background-repeat: repeat;
-    background-size: 150px 150px;
+    background-size: 140px 140px;
     min-height: 100vh;
 }
 
@@ -43,7 +44,7 @@ header p {
 }
 
 nav {
-    background: rgba(255,255,255,.97);
+    background: rgba(255,255,255,.95);
     display: flex;
     justify-content: center;
     gap: 35px;
@@ -66,11 +67,12 @@ nav a {
 }
 
 .profile-card {
-    background: rgba(255,255,255,.88);
+    background: rgba(255,255,255,0.72);
     border-radius: 30px;
     padding: 18px;
-    box-shadow: 0 8px 28px rgba(120,30,60,.12);
+    box-shadow: 0 8px 28px rgba(120,30,60,.15);
     text-align: center;
+    backdrop-filter: blur(2px);
 }
 
 .main-photo {
@@ -88,7 +90,7 @@ nav a {
 }
 
 .profile-location {
-    color: #666;
+    color: #555;
     font-size: 24px;
     margin: 0 0 25px;
 }
@@ -240,7 +242,8 @@ name: "Lucia, 29",
 location: "📍 Bratislava",
 image: "images/lucia-1.jpg",
 chatName: "Lucia",
-description: "Ahoj 😊 Rada spoznávam nových ľudí, rozprávam sa o každodennom živote, cestovaní, záľubách a všetkom, čo môže vytvoriť príjemnú konverzáciu."
+description:
+"Ahoj 😊 Rada spoznávam nových ľudí, rozprávam sa o každodennom živote, cestovaní, záľubách a všetkom, čo môže vytvoriť príjemnú konverzáciu."
 },
 
 Nina: {
@@ -248,7 +251,8 @@ name: "Nina, 31",
 location: "📍 Košice",
 image: "images/nina-1.jpg",
 chatName: "Nina",
-description: "Ahoj 😊 Som rada, keď sa rozhovor prirodzene rozbehne. Mám rada cestovanie, hudbu, filmy a príjemné večerné rozhovory."
+description:
+"Ahoj 😊 Som rada, keď sa rozhovor prirodzene rozbehne. Mám rada cestovanie, hudbu, filmy a príjemné večerné rozhovory."
 },
 
 Veronika: {
@@ -256,7 +260,8 @@ name: "Veronika, 27",
 location: "📍 Žilina",
 image: "images/veronika-1.jpg",
 chatName: "Veronika",
-description: "Ahoj 😊 Rada sa smejem, spoznávam zaujímavých ľudí a rozprávam sa o bežných radostiach života."
+description:
+"Ahoj 😊 Rada sa smejem, spoznávam zaujímavých ľudí a rozprávam sa o bežných radostiach života."
 },
 
 Petra: {
@@ -264,7 +269,8 @@ name: "Petra, 34",
 location: "📍 Trnava",
 image: "images/petra-1.jpg",
 chatName: "Petra",
-description: "Ahoj 😊 Mám rada pokojné rozhovory, dobré jedlo, výlety a ľudí, s ktorými sa dá otvorene porozprávať."
+description:
+"Ahoj 😊 Mám rada pokojné rozhovory, dobré jedlo, výlety a ľudí, s ktorými sa dá otvorene porozprávať."
 },
 
 Monika: {
@@ -272,7 +278,8 @@ name: "Monika, 30",
 location: "📍 Nitra",
 image: "images/monika-1.jpg",
 chatName: "Monika",
-description: "Ahoj 😊 Rada spoznávam nové názory, počúvam príbehy a užívam si príjemnú konverzáciu."
+description:
+"Ahoj 😊 Rada spoznávam nové názory, počúvam príbehy a užívam si príjemnú konverzáciu."
 },
 
 Sandra: {
@@ -280,7 +287,8 @@ name: "Sandra, 26",
 location: "📍 Banská Bystrica",
 image: "images/sandra-1.jpg",
 chatName: "Sandra",
-description: "Ahoj 😊 Som spoločenská a rada sa rozprávam o cestovaní, hudbe, filmoch a každodennom živote."
+description:
+"Ahoj 😊 Som spoločenská a rada sa rozprávam o cestovaní, hudbe, filmoch a každodennom živote."
 },
 
 Katarína: {
@@ -288,7 +296,8 @@ name: "Katarína, 32",
 location: "📍 Prešov",
 image: "images/katarina-1.jpg",
 chatName: "Katarína",
-description: "Ahoj 😊 Mám rada úprimné a príjemné rozhovory, pri ktorých človek zabudne na čas."
+description:
+"Ahoj 😊 Mám rada úprimné a príjemné rozhovory, pri ktorých človek zabudne na čas."
 },
 
 Simona: {
@@ -296,7 +305,8 @@ name: "Simona, 28",
 location: "📍 Poprad",
 image: "images/simona-1.jpg",
 chatName: "Simona",
-description: "Ahoj 😊 Rada cestujem, objavujem nové miesta a spoznávam ľudí s rôznymi záujmami."
+description:
+"Ahoj 😊 Rada cestujem, objavujem nové miesta a spoznávam ľudí s rôznymi záujmami."
 },
 
 Alexandra: {
@@ -304,7 +314,8 @@ name: "Alexandra, 30",
 location: "📍 Trenčín · Trans žena",
 image: "images/alexandra-1.jpg",
 chatName: "Alexandra",
-description: "Ahoj 😊 Som trans žena a rada spoznávam nových ľudí. Mám rada otvorené, rešpektujúce a príjemné rozhovory."
+description:
+"Ahoj 😊 Som trans žena a rada spoznávam nových ľudí. Mám rada otvorené, rešpektujúce a príjemné rozhovory."
 },
 
 Bianka: {
@@ -312,16 +323,20 @@ name: "Bianka, 28",
 location: "📍 Zvolen · Bisexuálna žena",
 image: "images/bianka-1.jpg",
 chatName: "Bianka",
-description: "Ahoj 😊 Som bisexuálna žena a rada spoznávam zaujímavých ľudí. Mám rada otvorené rozhovory a príjemnú spoločnosť."
+description:
+"Ahoj 😊 Som bisexuálna žena a rada spoznávam zaujímavých ľudí. Mám rada otvorené rozhovory a príjemnú spoločnosť."
 }
 
 };
 
-const params = new URLSearchParams(window.location.search);
+const params =
+new URLSearchParams(window.location.search);
 
-const meno = params.get("meno") || "Lucia";
+const meno =
+params.get("meno") || "Lucia";
 
-const profile = profiles[meno] || profiles.Lucia;
+const profile =
+profiles[meno] || profiles.Lucia;
 
 document.getElementById("profileImage").src =
 profile.image;
