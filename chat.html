@@ -43,13 +43,18 @@ header p {
     font-size: 19px;
 }
 
+/* HORNÁ LIŠTA */
+
 .topbar {
-    background: rgba(255,255,255,.95);
-    padding: 15px;
+    background: rgba(255,255,255,.96);
+    padding: 15px 20px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: 10px;
+
     box-shadow: 0 3px 12px rgba(0,0,0,.08);
 }
 
@@ -66,124 +71,244 @@ header p {
     font-size: 18px;
 }
 
+/* HLAVNÝ OBSAH */
+
 .container {
-    max-width: 850px;
-    margin: 25px auto;
+    max-width: 1000px;
+    margin: 25px auto 50px;
     padding: 0 15px;
 }
 
+/* PROFIL LUCIE */
+
 .profile {
-    background: rgba(255,255,255,.88);
+    background: rgba(255,255,255,.92);
     border-radius: 25px;
-    padding: 18px;
+    padding: 20px;
+
     text-align: center;
-    box-shadow: 0 7px 25px rgba(120,30,60,.15);
+
+    box-shadow:
+        0 7px 25px rgba(120,30,60,.15);
+}
+
+.profile-photo-area {
+    position: relative;
+    max-width: 420px;
+    margin: auto;
 }
 
 .profile img {
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
+    width: 100%;
+    height: 420px;
+
     object-fit: cover;
-    border: 5px solid #d41470;
+
+    border-radius: 22px;
+
+    display: block;
+}
+
+.photo-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.90);
+
+    color: #8e3fb4;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.20);
+}
+
+.photo-arrow.left {
+    left: 12px;
+}
+
+.photo-arrow.right {
+    right: 12px;
+}
+
+.photo-dots {
+    display: flex;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 12px;
+}
+
+.photo-dot {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #d8b5df;
+
+    cursor: pointer;
+}
+
+.photo-dot.active {
+    background: #d41470;
+    transform: scale(1.25);
 }
 
 .profile h2 {
-    margin: 10px 0 5px;
+    margin: 15px 0 5px;
+
     color: #8e3fb4;
-    font-size: 30px;
+
+    font-size: 31px;
 }
 
 .profile p {
     margin: 0;
+
     color: #666;
+
     font-size: 18px;
 }
 
+/* CHAT */
+
 .chat-box {
     margin-top: 20px;
-    background: rgba(255,255,255,.88);
+
+    background: rgba(255,255,255,.94);
+
     border-radius: 25px;
+
     padding: 20px;
-    box-shadow: 0 7px 25px rgba(120,30,60,.15);
+
+    box-shadow:
+        0 7px 25px rgba(120,30,60,.15);
 }
 
 .messages {
     display: flex;
     flex-direction: column;
+
     gap: 15px;
-    min-height: 300px;
+
+    min-height: 350px;
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    padding: 5px;
 }
 
-/* =========================================
-   CHLAP / ON = VĽAVO
-   ========================================= */
+/* CHLAP = VĽAVO */
 
 .message.man {
     align-self: flex-start;
+
     max-width: 75%;
 
     background: #eee8f3;
+
     color: #333;
 
     border-radius: 20px;
+
     border-bottom-left-radius: 5px;
 
     padding: 14px 18px;
 
     font-size: 18px;
+
     line-height: 1.45;
 }
 
-/* =========================================
-   LUCIA / JA = VPRAVO
-   ========================================= */
+/* LUCIA = VPRAVO */
 
 .message.woman {
     align-self: flex-end;
+
     max-width: 75%;
 
-    background: linear-gradient(
-        135deg,
-        #d41470,
-        #8e3fb4
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #d41470,
+            #8e3fb4
+        );
 
     color: white;
 
     border-radius: 20px;
+
     border-bottom-right-radius: 5px;
 
     padding: 14px 18px;
 
     font-size: 18px;
+
     line-height: 1.45;
 }
 
 .name {
     font-size: 14px;
+
     font-weight: bold;
+
     margin-bottom: 5px;
+
     opacity: .75;
 }
 
+/* OBRÁZOK V SPRÁVE */
+
+.message-image {
+    display: block;
+
+    max-width: 280px;
+    max-height: 350px;
+
+    border-radius: 15px;
+
+    margin-top: 5px;
+}
+
+/* VSTUP */
+
 .input-area {
     margin-top: 20px;
+
     display: flex;
+
     gap: 10px;
 }
 
 .input-area input {
     flex: 1;
+
     min-width: 0;
 
     padding: 16px;
 
     border: 2px solid #eadbea;
+
     border-radius: 17px;
 
     font-size: 17px;
+
     outline: none;
+
     background: white;
 }
 
@@ -193,65 +318,70 @@ header p {
 
 .send {
     border: none;
+
     border-radius: 17px;
+
     padding: 0 23px;
 
-    background: linear-gradient(
-        135deg,
-        #d41470,
-        #8e3fb4
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #d41470,
+            #8e3fb4
+        );
 
     color: white;
+
     font-size: 18px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
-.buttons {
+/* FOTO SPRÁVA */
+
+.photo-send {
+    margin-top: 12px;
+
     display: flex;
-    gap: 12px;
-    margin-top: 15px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
 }
 
-.panic {
-    flex: 1;
+.photo-label {
+    display: inline-block;
 
-    border: none;
-    border-radius: 15px;
+    padding: 13px 18px;
 
-    padding: 15px;
-
-    background: #222;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.exit {
-    flex: 1;
-
-    border: none;
-    border-radius: 15px;
-
-    padding: 15px;
+    border-radius: 14px;
 
     background: #eee;
-    color: #444;
 
-    font-size: 16px;
+    color: #555;
+
     font-weight: bold;
+
+    cursor: pointer;
 }
 
-.warning {
-    text-align: center;
-    margin-top: 15px;
-    color: #777;
+#photoInput {
+    display: none;
+}
+
+.selected-photo {
     font-size: 14px;
+
+    color: #777;
 }
 
-@media (max-width:600px) {
+/* MOBIL */
+
+@media (max-width:700px) {
 
     header h1 {
         font-size: 31px;
@@ -261,9 +391,17 @@ header p {
         font-size: 17px;
     }
 
+    .topbar {
+        padding: 13px;
+    }
+
+    .profile img {
+        height: 390px;
+    }
+
     .message.man,
     .message.woman {
-        max-width: 82%;
+        max-width: 85%;
     }
 
     .input-area {
@@ -274,42 +412,106 @@ header p {
         padding: 15px;
     }
 
-    .buttons {
-        flex-direction: column;
+    .message-image {
+        max-width: 220px;
     }
 }
 </style>
 </head>
 
+
 <body>
 
 <header>
+
     <h1>SpoznajMa ❤️</h1>
-    <p>Virtuálne profily a moderované konverzácie</p>
+
+    <p>
+        Virtuálne profily a moderované konverzácie
+    </p>
+
 </header>
+
 
 <div class="topbar">
 
-    <a class="back" href="profily.html">
+    <a
+        class="back"
+        href="profily.html"
+    >
         ← Profily
     </a>
 
     <div class="credits">
+
         Kredity:
-        <span id="credits">2.0</span>
+        <span id="credits">
+            2.0
+        </span>
+
     </div>
 
 </div>
 
+
 <div class="container">
+
+
+    <!-- LUCIA -->
 
     <div class="profile">
 
-        <img
-            id="profileImage"
-            src="images/lucia-1.jpg"
-            alt="Lucia"
-        >
+        <div class="profile-photo-area">
+
+            <img
+                id="profileImage"
+                src="images/lucia-1.jpg"
+                alt="Lucia"
+            >
+
+            <button
+                class="photo-arrow left"
+                type="button"
+                onclick="previousPhoto()"
+            >
+                ‹
+            </button>
+
+            <button
+                class="photo-arrow right"
+                type="button"
+                onclick="nextPhoto()"
+            >
+                ›
+            </button>
+
+        </div>
+
+
+        <div class="photo-dots">
+
+            <span
+                class="photo-dot active"
+                onclick="showPhoto(0)"
+            ></span>
+
+            <span
+                class="photo-dot"
+                onclick="showPhoto(1)"
+            ></span>
+
+            <span
+                class="photo-dot"
+                onclick="showPhoto(2)"
+            ></span>
+
+            <span
+                class="photo-dot"
+                onclick="showPhoto(3)"
+            ></span>
+
+        </div>
+
 
         <h2 id="profileName">
             Lucia
@@ -321,15 +523,21 @@ header p {
 
     </div>
 
+
+    <!-- CHAT -->
+
     <div class="chat-box">
 
-        <div class="messages" id="messages">
+        <div
+            class="messages"
+            id="messages"
+        >
 
-            <!-- LUCIA / JA = VPRAVO -->
+            <!-- LUCIA VPRAVO -->
 
             <div class="message woman">
 
-                <div class="name" id="womanName">
+                <div class="name">
                     Lucia
                 </div>
 
@@ -339,7 +547,7 @@ header p {
             </div>
 
 
-            <!-- CHLAP / ON = VĽAVO -->
+            <!-- CHLAP VĽAVO -->
 
             <div class="message man">
 
@@ -352,6 +560,9 @@ header p {
             </div>
 
         </div>
+
+
+        <!-- TEXT -->
 
         <div class="input-area">
 
@@ -372,102 +583,205 @@ header p {
 
         </div>
 
-        <div class="buttons">
 
-            <button
-                class="panic"
-                type="button"
-                onclick="panicRoom()"
+        <!-- FOTO -->
+
+        <div class="photo-send">
+
+            <label
+                class="photo-label"
+                for="photoInput"
             >
-                🚨 Panic Room
-            </button>
+                📷 Poslať fotografiu
+            </label>
 
-            <button
-                class="exit"
-                type="button"
-                onclick="goBack()"
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
             >
-                ← Späť na profil
-            </button>
 
-        </div>
+            <span
+                class="selected-photo"
+                id="selectedPhoto"
+            ></span>
 
-        <div class="warning">
-            Jedna odoslaná správa stojí 0,5 kreditu.
         </div>
 
     </div>
 
 </div>
 
+
 <script>
+
+/*
+    PROFILY LUCIE
+
+    Každý profil má 4 fotografie.
+*/
 
 const profiles = {
 
     Lucia: {
+
         name: "Lucia",
+
         info: "29 rokov · Bratislava",
-        image: "images/lucia-1.jpg"
+
+        photos: [
+            "images/lucia-1.jpg",
+            "images/lucia-2.jpg",
+            "images/lucia-3.jpg",
+            "images/lucia-4.jpg"
+        ]
+
     },
 
     Nina: {
+
         name: "Nina",
+
         info: "31 rokov · Košice",
-        image: "images/nina-1.jpg"
+
+        photos: [
+            "images/nina-1.jpg",
+            "images/nina-2.jpg",
+            "images/nina-3.jpg",
+            "images/nina-4.jpg"
+        ]
+
     },
 
     Veronika: {
+
         name: "Veronika",
+
         info: "27 rokov · Žilina",
-        image: "images/veronika-1.jpg"
+
+        photos: [
+            "images/veronika-1.jpg",
+            "images/veronika-2.jpg",
+            "images/veronika-3.jpg",
+            "images/veronika-4.jpg"
+        ]
+
     },
 
     Petra: {
+
         name: "Petra",
+
         info: "34 rokov · Trnava",
-        image: "images/petra-1.jpg"
+
+        photos: [
+            "images/petra-1.jpg",
+            "images/petra-2.jpg",
+            "images/petra-3.jpg",
+            "images/petra-4.jpg"
+        ]
+
     },
 
     Monika: {
+
         name: "Monika",
+
         info: "30 rokov · Nitra",
-        image: "images/monika-1.jpg"
+
+        photos: [
+            "images/monika-1.jpg",
+            "images/monika-2.jpg",
+            "images/monika-3.jpg",
+            "images/monika-4.jpg"
+        ]
+
     },
 
     Sandra: {
+
         name: "Sandra",
+
         info: "26 rokov · Banská Bystrica",
-        image: "images/sandra-1.jpg"
+
+        photos: [
+            "images/sandra-1.jpg",
+            "images/sandra-2.jpg",
+            "images/sandra-3.jpg",
+            "images/sandra-4.jpg"
+        ]
+
     },
 
     Katarína: {
+
         name: "Katarína",
+
         info: "32 rokov · Prešov",
-        image: "images/katarina-1.jpg"
+
+        photos: [
+            "images/katarina-1.jpg",
+            "images/katarina-2.jpg",
+            "images/katarina-3.jpg",
+            "images/katarina-4.jpg"
+        ]
+
     },
 
     Simona: {
+
         name: "Simona",
+
         info: "28 rokov · Poprad",
-        image: "images/simona-1.jpg"
+
+        photos: [
+            "images/simona-1.jpg",
+            "images/simona-2.jpg",
+            "images/simona-3.jpg",
+            "images/simona-4.jpg"
+        ]
+
     },
 
     Alexandra: {
+
         name: "Alexandra",
+
         info: "30 rokov · Trenčín · Trans žena",
-        image: "images/alexandra-1.jpg"
+
+        photos: [
+            "images/alexandra-1.jpg",
+            "images/alexandra-2.jpg",
+            "images/alexandra-3.jpg",
+            "images/alexandra-4.jpg"
+        ]
+
     },
 
     Bianka: {
+
         name: "Bianka",
+
         info: "28 rokov · Zvolen · Bisexuálna žena",
-        image: "images/bianka-1.jpg"
+
+        photos: [
+            "images/bianka-1.jpg",
+            "images/bianka-2.jpg",
+            "images/bianka-3.jpg",
+            "images/bianka-4.jpg"
+        ]
+
     }
 
 };
 
+
+/* VYBRANÝ PROFIL */
+
 const params =
-    new URLSearchParams(window.location.search);
+    new URLSearchParams(
+        window.location.search
+    );
 
 const profileId =
     params.get("meno") || "Lucia";
@@ -475,31 +789,128 @@ const profileId =
 const profile =
     profiles[profileId] || profiles.Lucia;
 
-document.getElementById("profileImage").src =
-    profile.image;
 
-document.getElementById("profileImage").alt =
+/* PROFIL */
+
+document
+    .getElementById("profileName")
+    .textContent =
     profile.name;
 
-document.getElementById("profileName").textContent =
-    profile.name;
-
-document.getElementById("womanName").textContent =
-    profile.name;
-
-document.getElementById("profileInfo").textContent =
+document
+    .getElementById("profileInfo")
+    .textContent =
     profile.info;
+
+
+/* FOTKY */
+
+const profileImage =
+    document.getElementById(
+        "profileImage"
+    );
+
+const dots =
+    document.querySelectorAll(
+        ".photo-dot"
+    );
+
+let currentPhoto = 0;
+
+
+function showPhoto(index) {
+
+    if (
+        index < 0
+    ) {
+        index =
+            profile.photos.length - 1;
+    }
+
+    if (
+        index >=
+        profile.photos.length
+    ) {
+        index = 0;
+    }
+
+    currentPhoto = index;
+
+    profileImage.src =
+        profile.photos[
+            currentPhoto
+        ];
+
+    dots.forEach(
+        function(dot, i) {
+
+            dot.classList.toggle(
+                "active",
+                i === currentPhoto
+            );
+
+        }
+    );
+}
+
+
+function nextPhoto() {
+
+    showPhoto(
+        currentPhoto + 1
+    );
+
+}
+
+
+function previousPhoto() {
+
+    showPhoto(
+        currentPhoto - 1
+    );
+
+}
+
+
+showPhoto(0);
 
 
 /* KREDITY */
 
+/*
+    DÔLEŽITÉ:
+
+    Zatiaľ je zostatok oddelený podľa
+    používateľského identifikátora.
+
+    V skutočnej verzii bude tento údaj
+    načítaný zo servera podľa účtu.
+*/
+
+const userId =
+    localStorage.getItem(
+        "spoznajma_user_id"
+    ) ||
+    localStorage.getItem(
+        "spoznajma_email"
+    ) ||
+    "demo-user";
+
+
 const creditKey =
-    "spoznajma_credits_" + profile.name;
+    "spoznajma_user_credits_" +
+    userId;
+
 
 let credits =
-    localStorage.getItem(creditKey);
+    localStorage.getItem(
+        creditKey
+    );
 
-if (credits === null) {
+
+if (
+    credits === null
+) {
 
     credits = 2;
 
@@ -507,89 +918,131 @@ if (credits === null) {
         creditKey,
         credits
     );
+
 }
 
-credits = Number(credits);
+
+credits =
+    Number(credits);
+
 
 function updateCredits() {
 
-    document.getElementById("credits")
+    document
+        .getElementById("credits")
         .textContent =
         credits.toFixed(1);
+
 }
+
 
 updateCredits();
 
 
-/* ODOSLANIE SPRÁVY CHLAPA / ON */
+/* TEXTOVÁ SPRÁVA */
 
 function sendMessage() {
 
     const input =
-        document.getElementById("messageInput");
+        document.getElementById(
+            "messageInput"
+        );
 
     const text =
         input.value.trim();
+
 
     if (!text) {
         return;
     }
 
+
     if (credits < 0.5) {
 
-        alert("Nemáš dostatok kreditov.");
+        alert(
+            "Nemáš dostatok kreditov."
+        );
 
         return;
+
     }
 
+
     credits -= 0.5;
+
 
     localStorage.setItem(
         creditKey,
         credits
     );
 
+
     const message =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    /* NATVRDO CHLAP = VĽAVO */
+    message.className =
+        "message man";
 
-    message.className = "message man";
 
     const name =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    name.className = "name";
+    name.className =
+        "name";
 
-    name.textContent = "On";
+    name.textContent =
+        "On";
+
 
     const content =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    content.textContent = text;
+    content.textContent =
+        text;
 
-    message.appendChild(name);
-    message.appendChild(content);
+
+    message.appendChild(
+        name
+    );
+
+    message.appendChild(
+        content
+    );
+
 
     document
         .getElementById("messages")
-        .appendChild(message);
+        .appendChild(
+            message
+        );
+
 
     input.value = "";
 
+
     updateCredits();
+
 
     message.scrollIntoView({
         behavior: "smooth",
         block: "nearest"
     });
+
 }
 
 
 /* ODOSLAŤ */
 
 document
-    .getElementById("sendButton")
+    .getElementById(
+        "sendButton"
+    )
     .addEventListener(
         "click",
         sendMessage
@@ -599,41 +1052,181 @@ document
 /* ENTER */
 
 document
-    .getElementById("messageInput")
+    .getElementById(
+        "messageInput"
+    )
     .addEventListener(
         "keydown",
         function(event) {
 
-            if (event.key === "Enter") {
+            if (
+                event.key === "Enter"
+            ) {
 
                 event.preventDefault();
 
                 sendMessage();
+
             }
 
         }
     );
 
 
-/* PANIC ROOM */
+/* FOTO V SPRÁVE */
 
-function panicRoom() {
+document
+    .getElementById(
+        "photoInput"
+    )
+    .addEventListener(
+        "change",
+        function(event) {
 
-    window.location.href =
-        "profily.html";
-}
+            const file =
+                event.target.files[0];
 
 
-/* SPÄŤ */
+            if (!file) {
+                return;
+            }
 
-function goBack() {
 
-    window.location.href =
-        "profil.html?meno=" +
-        encodeURIComponent(
-            profile.name
-        );
-}
+            if (
+                !file.type.startsWith(
+                    "image/"
+                )
+            ) {
+
+                alert(
+                    "Vyber obrázok."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                credits < 0.5
+            ) {
+
+                alert(
+                    "Nemáš dostatok kreditov."
+                );
+
+                event.target.value =
+                    "";
+
+                return;
+
+            }
+
+
+            /*
+                Aj fotografia v chate
+                stojí 0,5 kreditu.
+            */
+
+            credits -= 0.5;
+
+
+            localStorage.setItem(
+                creditKey,
+                credits
+            );
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(e) {
+
+                    const message =
+                        document.createElement(
+                            "div"
+                        );
+
+                    message.className =
+                        "message man";
+
+
+                    const name =
+                        document.createElement(
+                            "div"
+                        );
+
+                    name.className =
+                        "name";
+
+                    name.textContent =
+                        "On";
+
+
+                    const image =
+                        document.createElement(
+                            "img"
+                        );
+
+                    image.className =
+                        "message-image";
+
+                    image.src =
+                        e.target.result;
+
+                    image.alt =
+                        "Fotografia od používateľa";
+
+
+                    message.appendChild(
+                        name
+                    );
+
+                    message.appendChild(
+                        image
+                    );
+
+
+                    document
+                        .getElementById(
+                            "messages"
+                        )
+                        .appendChild(
+                            message
+                        );
+
+
+                    updateCredits();
+
+
+                    document
+                        .getElementById(
+                            "selectedPhoto"
+                        )
+                        .textContent =
+                        "";
+
+
+                    message.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest"
+                    });
+
+                };
+
+
+            reader.readAsDataURL(
+                file
+            );
+
+
+            event.target.value =
+                "";
+
+        }
+    );
 
 </script>
 
