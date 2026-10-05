@@ -1,607 +1,305 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpoznajMa ❤️</title>
 
-  <title>SpoznajMa – Zoznamka</title>
+<style>
+* {
+    box-sizing: border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f5fa;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 23px;
+}
+
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    padding: 25px 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7e32a2;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+/* JEDINÉ HLAVNÉ UPOZORNENIE */
+.notice {
+    background: #fff4c9;
+    border: 2px solid #f1dc87;
+    color: #604d12;
+    border-radius: 22px;
+    padding: 24px;
+    margin-bottom: 35px;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.notice strong {
+    font-weight: bold;
+}
+
+/* PROFILY */
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 28px;
+    padding: 18px;
+    box-shadow: 0 7px 25px rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+}
+
+.profile-info {
+    padding: 20px 8px 8px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    color: #8b32a9;
+    font-size: 30px;
+}
+
+.profile-info p {
+    margin: 8px 0 18px;
+    font-size: 21px;
+    color: #666;
+}
+
+.profile-button {
+    display: block;
+    width: 100%;
+    padding: 17px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #777;
+}
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 36px;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f4f6;
-      color: #222;
-    }
-
-    header {
-      background: linear-gradient(135deg, #d63384, #8e44ad);
-      color: white;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 3px 12px rgba(0,0,0,.15);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: bold;
+    header p {
+        font-size: 20px;
     }
 
     nav {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+        gap: 24px;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      padding: 9px 13px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.15);
-    }
-
-    nav a:hover {
-      background: rgba(255,255,255,.28);
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: 35px auto 20px;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-      color: #8e44ad;
-    }
-
-    .hero p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .notice {
-      max-width: 900px;
-      margin: 0 auto 30px;
-      background: #fff3cd;
-      border: 1px solid #ffe69c;
-      border-radius: 14px;
-      padding: 16px 20px;
-      line-height: 1.5;
-      color: #664d03;
+        font-size: 19px;
     }
 
     .profiles {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
+        grid-template-columns: 1fr;
     }
 
-    .profiles h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 28px;
+    .profile-card img {
+        height: 420px;
     }
-
-    .profile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .profile-card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,.10);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .profile-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0,0,0,.16);
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .profile-info {
-      padding: 17px;
-    }
-
-    .profile-info h3 {
-      font-size: 21px;
-      margin-bottom: 7px;
-    }
-
-    .profile-info p {
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #f1e4f5;
-      color: #7b2cbf;
-      border-radius: 20px;
-      padding: 5px 9px;
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-
-    .profile-button {
-      display: block;
-      width: 100%;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #d63384, #8e44ad);
-      padding: 11px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .profile-button:hover {
-      opacity: .9;
-    }
-
-    .actions {
-      text-align: center;
-      margin: 40px 20px;
-    }
-
-    .main-button {
-      display: inline-block;
-      text-decoration: none;
-      background: #d63384;
-      color: white;
-      padding: 14px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin: 5px;
-    }
-
-    .main-button.secondary {
-      background: #8e44ad;
-    }
-
-    footer {
-      margin-top: 50px;
-      background: #252129;
-      color: #ddd;
-      text-align: center;
-      padding: 30px 20px;
-      line-height: 1.7;
-    }
-
-    footer a {
-      color: #ff9acb;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .header-inner {
-        flex-direction: column;
-      }
-
-      .hero h1 {
-        font-size: 31px;
-      }
-
-      .hero {
-        padding-top: 25px;
-      }
-
-      .profile-photo {
-        height: 300px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-
-    <div class="logo">
-      ❤️ SpoznajMa
-    </div>
-
-    <nav>
-      <a href="index.html">Domov</a>
-      <a href="profily.html">Profily</a>
-      <a href="registracia.html">Registrácia</a>
-      <a href="prihlasenie.html">Prihlásenie</a>
-    </nav>
-
-  </div>
+    <h1>SpoznajMa ❤️</h1>
+    <p>Virtuálne profily a moderované konverzácie</p>
 </header>
 
+<nav>
+    <a href="index.html">Domov</a>
+    <a href="profily.html">Profily</a>
+    <a href="kredity.html">Kredity</a>
+    <a href="prihlasenie.html">Prihlásenie</a>
+</nav>
 
-<section class="hero">
+<div class="container">
 
-  <h1>SpoznajMa</h1>
+    <!-- JEDINÉ UPOZORNENIE NA CELÝ WEB -->
+    <div class="notice">
+        <strong>Dôležité:</strong>
+        Profily na tejto stránke sú virtuálne profily a komunikácia je moderovaná.
+        Pred použitím platenej služby si prosím prečítaj podmienky služby.
+    </div>
 
-  <p>
-    Miesto, kde môžeš spoznávať nové osobnosti,
-    prezerať profily a začať konverzáciu.
-  </p>
+    <div class="profiles">
 
-</section>
+        <div class="profile-card">
+            <img src="images/lucia-1.jpg" alt="Lucia">
+            <div class="profile-info">
+                <h2>Lucia, 29</h2>
+                <p>📍 Bratislava</p>
+                <a class="profile-button" href="profil.html?meno=Lucia">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
 
+        <div class="profile-card">
+            <img src="images/nina-1.jpg" alt="Nina">
+            <div class="profile-info">
+                <h2>Nina, 31</h2>
+                <p>📍 Košice</p>
+                <a class="profile-button" href="profil.html?meno=Nina">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
 
-<div class="notice">
+        <div class="profile-card">
+            <img src="images/veronika-1.jpg" alt="Veronika">
+            <div class="profile-info">
+                <h2>Veronika, 27</h2>
+                <p>📍 Žilina</p>
+                <a class="profile-button" href="profil.html?meno=Veronika">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
 
-  <strong>Dôležité upozornenie:</strong>
-  Profily na tejto stránke sú virtuálne profily,
-  ktoré sú spravované moderátorom. Táto informácia je
-  súčasťou služby a má byť používateľovi jasne dostupná
-  ešte pred použitím platenej komunikácie.
+        <div class="profile-card">
+            <img src="images/petra-1.jpg" alt="Petra">
+            <div class="profile-info">
+                <h2>Petra, 34</h2>
+                <p>📍 Trnava</p>
+                <a class="profile-button" href="profil.html?meno=Petra">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
 
+        <div class="profile-card">
+            <img src="images/monika-1.jpg" alt="Monika">
+            <div class="profile-info">
+                <h2>Monika, 30</h2>
+                <p>📍 Nitra</p>
+                <a class="profile-button" href="profil.html?meno=Monika">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <img src="images/sandra-1.jpg" alt="Sandra">
+            <div class="profile-info">
+                <h2>Sandra, 26</h2>
+                <p>📍 Banská Bystrica</p>
+                <a class="profile-button" href="profil.html?meno=Sandra">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <img src="images/katarina-1.jpg" alt="Katarína">
+            <div class="profile-info">
+                <h2>Katarína, 32</h2>
+                <p>📍 Prešov</p>
+                <a class="profile-button" href="profil.html?meno=Katarína">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <img src="images/simona-1.jpg" alt="Simona">
+            <div class="profile-info">
+                <h2>Simona, 28</h2>
+                <p>📍 Poprad</p>
+                <a class="profile-button" href="profil.html?meno=Simona">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <img src="images/alexandra-1.jpg" alt="Alexandra">
+            <div class="profile-info">
+                <h2>Alexandra, 30</h2>
+                <p>📍 Trenčín · Trans žena</p>
+                <a class="profile-button" href="profil.html?meno=Alexandra">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <img src="images/bianka-1.jpg" alt="Bianka">
+            <div class="profile-info">
+                <h2>Bianka, 28</h2>
+                <p>📍 Zvolen · Bisexuálna žena</p>
+                <a class="profile-button" href="profil.html?meno=Bianka">
+                    Zobraziť profil
+                </a>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-
-<section class="profiles">
-
-  <h2>Vybrané profily</h2>
-
-  <div class="profile-grid">
-
-
-    <!-- LUCIA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/lucia-1.jpg"
-        alt="Lucia">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Lucia, 29</h3>
-
-        <p>
-          Bratislava<br>
-          Spoločenská, veselá a rada spoznáva nových ľudí.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Lucia">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- NINA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/nina-1.jpg"
-        alt="Nina">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Nina, 31</h3>
-
-        <p>
-          Košice<br>
-          Milá, komunikatívna a rada sa rozpráva.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Nina">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- VERONIKA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/veronika-1.jpg"
-        alt="Veronika">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Veronika, 27</h3>
-
-        <p>
-          Žilina<br>
-          Energická a otvorená novým rozhovorom.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Veronika">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- PETRA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/petra-1.jpg"
-        alt="Petra">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Petra, 34</h3>
-
-        <p>
-          Trnava<br>
-          Pokojná, sympatická a komunikatívna.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Petra">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- MONIKA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/monika-1.jpg"
-        alt="Monika">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Monika, 30</h3>
-
-        <p>
-          Nitra<br>
-          Spontánna a rada vedie príjemné rozhovory.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Monika">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- SANDRA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/sandra-1.jpg"
-        alt="Sandra">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Sandra, 26</h3>
-
-        <p>
-          Banská Bystrica<br>
-          Veselá a rada spoznáva nové osobnosti.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Sandra">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- KATARÍNA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/katarina-1.jpg"
-        alt="Katarína">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Katarína, 32</h3>
-
-        <p>
-          Prešov<br>
-          Priateľská a rada komunikuje.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Katarina">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- SIMONA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/simona-1.jpg"
-        alt="Simona">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil</span>
-
-        <h3>Simona, 28</h3>
-
-        <p>
-          Poprad<br>
-          Usmievavá a otvorená príjemnej konverzácii.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Simona">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- ALEXANDRA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/alexandra-1.jpg"
-        alt="Alexandra">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil · trans žena</span>
-
-        <h3>Alexandra, 30</h3>
-
-        <p>
-          Trenčín<br>
-          Sebavedomá, spoločenská a rada sa rozpráva.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Alexandra">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- BIANKA -->
-
-    <article class="profile-card">
-
-      <img
-        class="profile-photo"
-        src="images/bianka-1.jpg"
-        alt="Bianka">
-
-      <div class="profile-info">
-
-        <span class="tag">Virtuálny profil · bisexuálna žena</span>
-
-        <h3>Bianka, 28</h3>
-
-        <p>
-          Zvolen<br>
-          Otvorená, komunikatívna a rada spoznáva ľudí.
-        </p>
-
-        <a class="profile-button" href="profil.html?meno=Bianka">
-          Zobraziť profil
-        </a>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-<section class="actions">
-
-  <a class="main-button" href="profily.html">
-    Zobraziť všetky profily
-  </a>
-
-  <a class="main-button secondary" href="registracia.html">
-    Vytvoriť účet
-  </a>
-
-</section>
-
-
 <footer>
-
-  <p>
     © 2026 SpoznajMa
-  </p>
-
-  <p>
-    Virtuálne profily sú moderované a spravované v rámci služby.
-  </p>
-
-  <p>
-    <a href="registracia.html">Registrácia</a>
-    &nbsp; | &nbsp;
-    <a href="prihlasenie.html">Prihlásenie</a>
-  </p>
-
 </footer>
-
 
 </body>
 </html>
