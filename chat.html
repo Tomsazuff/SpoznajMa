@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SpoznajMa – Chat</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -13,15 +16,59 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f7f3f6;
+    background-color: #fff7f8;
     color: #333;
+    min-height: 100vh;
+
+    background-image:
+        radial-gradient(circle at 10% 15%, rgba(210,35,65,.07) 0 3px, transparent 4px),
+        radial-gradient(circle at 80% 25%, rgba(210,35,65,.06) 0 3px, transparent 4px),
+        radial-gradient(circle at 25% 70%, rgba(210,35,65,.06) 0 3px, transparent 4px),
+        radial-gradient(circle at 90% 80%, rgba(210,35,65,.07) 0 3px, transparent 4px),
+        linear-gradient(135deg,#fff8f9,#fff1f3);
+
+    background-size:
+        150px 150px,
+        190px 190px,
+        170px 170px,
+        210px 210px,
+        100% 100%;
+
+    background-attachment: fixed;
 }
 
+body::before {
+    content: "♥     ♡          ♥       ♡     ♥          ♡";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    color: rgba(210,35,65,.045);
+
+    font-size: 28px;
+    line-height: 120px;
+
+    letter-spacing: 20px;
+    word-spacing: 25px;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+/* HLAVIČKA */
+
 header {
-    background: linear-gradient(135deg, #8e44ad, #d63384);
+    background: linear-gradient(135deg,#8e44ad,#d63384);
+
     color: white;
+
     padding: 18px 20px;
+
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 }
@@ -32,123 +79,184 @@ header {
 }
 
 .credits {
-    background: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,.18);
+
     padding: 9px 14px;
+
     border-radius: 20px;
+
     font-weight: bold;
 }
 
+
+/* OBSAH */
+
 .container {
     max-width: 900px;
+
     margin: 20px auto;
+
     padding: 0 15px;
 }
 
+
+/* PROFIL */
+
 .profile {
-    background: white;
+    background: rgba(255,255,255,.97);
+
     border-radius: 18px;
+
     padding: 15px;
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 3px 12px rgba(120,30,60,.08);
+
     margin-bottom: 15px;
 }
 
 .profile img {
     width: 65px;
     height: 65px;
+
     object-fit: cover;
+
     border-radius: 50%;
 }
 
 .profile h2 {
     margin: 0 0 5px;
+
     color: #8e44ad;
 }
 
 .profile p {
     margin: 0;
+
     color: #777;
 }
 
-.notice {
-    background: #fff4fb;
-    border: 1px solid #f0c7df;
-    padding: 10px 14px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    font-size: 13px;
-}
+
+/* CHAT */
 
 .chat {
-    background: white;
+    background: rgba(255,255,255,.97);
+
     border-radius: 18px;
+
     padding: 20px;
+
     min-height: 430px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 3px 12px rgba(120,30,60,.08);
 }
 
 .messages {
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
 }
 
+
 /* MUŽ – VĽAVO */
+
 .message.man {
     align-self: flex-start;
+
     background: #eeeeee;
+
     color: #333;
-    border-radius: 16px 16px 16px 4px;
+
+    border-radius:
+        16px 16px 16px 4px;
+
     padding: 11px 14px;
+
     max-width: 75%;
 }
 
-/* LUCIA / ŽENA – VPRAVO */
+
+/* ŽENA – VPRAVO */
+
 .message.lucia {
     align-self: flex-end;
+
     background: #8e44ad;
+
     color: white;
-    border-radius: 16px 16px 4px 16px;
+
+    border-radius:
+        16px 16px 4px 16px;
+
     padding: 11px 14px;
+
     max-width: 75%;
 }
 
 .sender {
     font-size: 11px;
+
     font-weight: bold;
+
     margin-bottom: 4px;
-    opacity: 0.8;
+
+    opacity: .8;
 }
 
 .message-text {
     font-size: 15px;
+
     line-height: 1.4;
 }
 
+
+/* PÍSANIE SPRÁVY */
+
 .composer {
     margin-top: 20px;
+
     display: flex;
+
     gap: 10px;
 }
 
 .composer input {
     flex: 1;
+
     padding: 13px;
-    border: 1px solid #ddd;
+
+    border:
+        1px solid #ddd;
+
     border-radius: 12px;
+
     font-size: 15px;
+
     outline: none;
 }
 
 .composer button {
     border: none;
+
     background: #8e44ad;
+
     color: white;
+
     padding: 0 20px;
+
     border-radius: 12px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
@@ -156,31 +264,49 @@ header {
     background: #74358f;
 }
 
+
+/* TLAČIDLÁ */
+
 .actions {
     margin-top: 15px;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 10px;
 }
 
 .back {
     color: #8e44ad;
+
     text-decoration: none;
+
     font-weight: bold;
 }
 
 .panic {
     background: #d63384;
+
     color: white;
+
     border: none;
+
     padding: 11px 17px;
+
     border-radius: 12px;
+
     cursor: pointer;
+
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
+
+/* MOBIL */
+
+@media (max-width:600px) {
 
     header {
         padding: 14px;
@@ -210,11 +336,15 @@ header {
     .composer button {
         height: 45px;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
+
 
 <header>
 
@@ -224,13 +354,16 @@ header {
 
     <div class="credits">
         Kredity:
-        <span id="credits">2</span>
+        <span id="credits">2.0</span>
     </div>
 
 </header>
 
 
 <div class="container">
+
+
+    <!-- PROFIL -->
 
     <div class="profile">
 
@@ -255,10 +388,7 @@ header {
     </div>
 
 
-    <div class="notice">
-        Tento profil je virtuálny a komunikácia je moderovaná.
-    </div>
-
+    <!-- CHAT -->
 
     <div class="chat">
 
@@ -267,7 +397,8 @@ header {
             id="messages"
         >
 
-            <!-- MUŽ – VĽAVO -->
+
+            <!-- MUŽ -->
 
             <div class="message man">
 
@@ -282,11 +413,14 @@ header {
             </div>
 
 
-            <!-- ŽENA – VPRAVO -->
+            <!-- ŽENA -->
 
             <div class="message lucia">
 
-                <div class="sender" id="femaleSender">
+                <div
+                    class="sender"
+                    id="femaleSender"
+                >
                     Lucia
                 </div>
 
@@ -300,6 +434,8 @@ header {
         </div>
 
 
+        <!-- PÍSANIE -->
+
         <div class="composer">
 
             <input
@@ -309,12 +445,16 @@ header {
                 autocomplete="off"
             >
 
-            <button onclick="sendMessage()">
+            <button
+                onclick="sendMessage()"
+            >
                 Odoslať
             </button>
 
         </div>
 
+
+        <!-- AKCIE -->
 
         <div class="actions">
 
@@ -334,6 +474,7 @@ header {
 
         </div>
 
+
     </div>
 
 </div>
@@ -341,11 +482,10 @@ header {
 
 <script>
 
-/*
-==================================================
-PROFILY
-==================================================
-*/
+
+/* ==============================
+   PROFILY
+============================== */
 
 const profiles = {
 
@@ -422,11 +562,9 @@ const profiles = {
 };
 
 
-/*
-==================================================
-ZISTENIE PROFILU Z URL
-==================================================
-*/
+/* ==============================
+   PROFIL Z URL
+============================== */
 
 const params =
     new URLSearchParams(
@@ -437,16 +575,13 @@ let profileId =
     params.get("meno");
 
 
-/*
-Ak profil nie je uvedený,
-použije sa Lucia.
-*/
-
 if (
     !profileId ||
     !profiles[profileId]
 ) {
+
     profileId = "lucia";
+
 }
 
 
@@ -454,11 +589,9 @@ const profile =
     profiles[profileId];
 
 
-/*
-==================================================
-NASTAVENIE PROFILU
-==================================================
-*/
+/* ==============================
+   ZOBRAZENIE PROFILU
+============================== */
 
 document.getElementById(
     "profileImage"
@@ -492,22 +625,9 @@ document.getElementById(
     profile.name;
 
 
-/*
-==================================================
-KREDITY – SAMOSTATNÉ PRE KAŽDÝ PROFIL
-==================================================
-*/
-
-/*
-Príklad:
-
-spoznajma_credits_lucia
-spoznajma_credits_nina
-spoznajma_credits_pet ra
-atď.
-
-Každý profil má vlastný zostatok.
-*/
+/* ==============================
+   KREDITY
+============================== */
 
 const creditKey =
     "spoznajma_credits_" +
@@ -520,14 +640,7 @@ let credits =
     );
 
 
-/*
-Ak tento profil ešte nemá
-uložené kredity, dostane 2.
-*/
-
-if (
-    credits === null
-) {
+if (credits === null) {
 
     credits = 2;
 
@@ -544,10 +657,6 @@ if (
 }
 
 
-/*
-Zobrazenie kreditov
-*/
-
 function updateCredits() {
 
     document.getElementById(
@@ -557,14 +666,13 @@ function updateCredits() {
 
 }
 
+
 updateCredits();
 
 
-/*
-==================================================
-ODOSLANIE SPRÁVY
-==================================================
-*/
+/* ==============================
+   ODOSLANIE SPRÁVY
+============================== */
 
 function sendMessage() {
 
@@ -582,31 +690,22 @@ function sendMessage() {
     }
 
 
-    /*
-    Jedna správa = 0,5 kreditu
-    */
+    /* 1 správa = 0,5 kreditu */
 
     if (credits < 0.5) {
 
         alert(
-            "Nemáš dostatok kreditov pre tento profil."
+            "Nemáš dostatok kreditov."
         );
 
         return;
+
     }
 
-
-    /*
-    Odpočítanie
-    */
 
     credits =
         credits - 0.5;
 
-
-    /*
-    Uloženie PRE KONKRÉTNY PROFIL
-    */
 
     localStorage.setItem(
         creditKey,
@@ -616,10 +715,6 @@ function sendMessage() {
 
     updateCredits();
 
-
-    /*
-    Vytvorenie správy Lucie / ženy
-    */
 
     const message =
         document.createElement(
@@ -660,11 +755,9 @@ function sendMessage() {
 }
 
 
-/*
-==================================================
-OCHRANA TEXTU
-==================================================
-*/
+/* ==============================
+   OCHRANA TEXTU
+============================== */
 
 function escapeHtml(text) {
 
@@ -673,18 +766,17 @@ function escapeHtml(text) {
             "div"
         );
 
-    div.textContent = text;
+    div.textContent =
+        text;
 
     return div.innerHTML;
 
 }
 
 
-/*
-==================================================
-ENTER = ODOSLAŤ
-==================================================
-*/
+/* ==============================
+   ENTER = ODOSLAŤ
+============================== */
 
 document
     .getElementById("messageInput")
@@ -706,11 +798,9 @@ document
     );
 
 
-/*
-==================================================
-PANIC ROOM
-==================================================
-*/
+/* ==============================
+   PANIC ROOM
+============================== */
 
 function panicRoom() {
 
