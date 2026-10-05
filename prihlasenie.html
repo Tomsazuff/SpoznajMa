@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prihlásenie – SpoznajMa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">SpoznajMa</div>
+
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="profily.html">Profily</a>
+        <a href="registracia.html" class="nav-button">Registrácia</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <h1>Prihlásenie</h1>
+
+        <p>
+            Prihlás sa do svojho účtu.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="email">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                required
+                placeholder="tvoj@email.sk"
+            >
+
+            <label for="password">
+                Heslo
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                required
+                placeholder="Tvoje heslo"
+            >
+
+            <button type="submit" class="button">
+                Prihlásiť sa
+            </button>
+
+        </form>
+
+        <p id="loginMessage"></p>
+
+        <p class="form-footer">
+            Ešte nemáš účet?
+            <a href="registracia.html">
+                Zaregistrovať sa
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="footer-logo">
+        SpoznajMa
+    </div>
+
+    <p>© 2026 SpoznajMa</p>
+
+</footer>
+
+<script>
+
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const message =
+            document.getElementById("loginMessage");
+
+        message.textContent =
+            "Prihlásenie pripravíme po pripojení servera a databázy.";
+
+        message.style.color = "#d63384";
+
+    });
+
+</script>
+
+</body>
+</html>
