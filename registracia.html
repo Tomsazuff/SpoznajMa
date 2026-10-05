@@ -1,292 +1,249 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrácia | SpoznajMa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrácia – SpoznajMa</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f4f8;
-      color: #333;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f5fa;
+    color: #333;
+}
 
-    header {
-      background: linear-gradient(135deg, #d81b60, #8e24aa);
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
+header {
+    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
 
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 23px;
+}
+
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    padding: 25px 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+nav a {
+    text-decoration: none;
+    color: #7e32a2;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.container {
+    max-width: 760px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 30px;
+    padding: 45px 55px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+h2 {
+    text-align: center;
+    color: #8b32a9;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+label {
+    display: block;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 25px 0 10px;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 18px;
+    font-size: 19px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #9b3bb5;
+}
+
+button {
+    width: 100%;
+    margin-top: 32px;
+    padding: 20px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #d41470, #8e3fb4);
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bottom {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 18px;
+}
+
+.bottom a {
+    color: #8b32a9;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
     header h1 {
-      margin: 0 0 8px;
+        font-size: 34px;
     }
 
     header p {
-      margin: 0;
+        font-size: 20px;
     }
 
     nav {
-      background: white;
-      padding: 13px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        gap: 22px;
+        flex-wrap: wrap;
     }
 
     nav a {
-      margin: 0 8px;
-      color: #8e24aa;
-      text-decoration: none;
-      font-weight: bold;
+        font-size: 19px;
     }
 
     .container {
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 0 15px;
+        margin: 35px auto;
     }
 
-    .box {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    .card {
+        padding: 30px 22px;
     }
 
     h2 {
-      text-align: center;
-      color: #8e24aa;
-      margin-top: 0;
+        font-size: 34px;
     }
-
-    .notice {
-      background: #fff3cd;
-      border: 1px solid #ffe69c;
-      color: #664d03;
-      padding: 14px;
-      border-radius: 12px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 6px;
-      font-weight: bold;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #8e24aa;
-    }
-
-    .checkbox {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin: 18px 0;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .checkbox input {
-      width: auto;
-      margin-top: 3px;
-    }
-
-    button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #d81b60, #8e24aa);
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.92;
-    }
-
-    .login {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .login a {
-      color: #8e24aa;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    #message {
-      margin-top: 15px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      color: #777;
-      font-size: 14px;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>SpoznajMa ❤️</h1>
-  <p>Vytvor si účet</p>
+    <h1>SpoznajMa ❤️</h1>
+    <p>Vytvor si účet</p>
 </header>
 
 <nav>
-  <a href="index.html">Domov</a>
-  <a href="profily.html">Profily</a>
-  <a href="kredity.html">Kredity</a>
-  <a href="prihlasenie.html">Prihlásenie</a>
+    <a href="index.html">Domov</a>
+    <a href="profily.html">Profily</a>
+    <a href="kredity.html">Kredity</a>
+    <a href="prihlasenie.html">Prihlásenie</a>
 </nav>
 
 <div class="container">
 
-  <div class="box">
+    <div class="card">
 
-    <h2>Registrácia</h2>
+        <h2>Registrácia</h2>
 
-    <div class="notice">
-      <strong>Dôležité:</strong> SpoznajMa používa virtuálne profily
-      a moderovanú komunikáciu. Registráciou potvrdzuješ, že si oboznámený
-      s charakterom služby.
+        <form id="registerForm">
+
+            <label for="username">Meno alebo prezývka</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Tvoje meno alebo prezývka"
+                required
+            >
+
+            <label for="email">E-mail</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="tvoj@email.sk"
+                required
+            >
+
+            <label for="password">Heslo</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Tvoje heslo"
+                required
+                minlength="6"
+            >
+
+            <button type="submit">Vytvoriť účet</button>
+
+        </form>
+
+        <div class="message" id="message"></div>
+
+        <div class="bottom">
+            Už máš účet?
+            <a href="prihlasenie.html">Prihlás sa</a>
+        </div>
+
     </div>
-
-    <form id="registerForm">
-
-      <label for="name">Meno alebo prezývka</label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Tvoje meno alebo prezývka"
-        required
-      >
-
-      <label for="email">E-mail</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="tvoj@email.sk"
-        required
-      >
-
-      <label for="password">Heslo</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="Minimálne 8 znakov"
-        minlength="8"
-        required
-      >
-
-      <label for="password2">Zopakuj heslo</label>
-      <input
-        type="password"
-        id="password2"
-        placeholder="Zopakuj heslo"
-        minlength="8"
-        required
-      >
-
-      <div class="checkbox">
-        <input type="checkbox" id="age" required>
-        <label for="age">
-          Potvrdzujem, že mám najmenej 18 rokov.
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <input type="checkbox" id="terms" required>
-        <label for="terms">
-          Súhlasím s podmienkami služby a rozumiem, že profily sú virtuálne
-          a komunikácia je moderovaná.
-        </label>
-      </div>
-
-      <button type="submit">
-        Vytvoriť účet
-      </button>
-
-      <div id="message"></div>
-
-    </form>
-
-    <div class="login">
-      Už máš účet?
-      <a href="prihlasenie.html">Prihlásiť sa</a>
-    </div>
-
-  </div>
 
 </div>
 
-<footer>
-  © 2026 SpoznajMa · Virtuálne profily · Moderovaná komunikácia
-</footer>
-
 <script>
-  const form = document.getElementById("registerForm");
-  const message = document.getElementById("message");
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
+    const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
-    const password2 = document.getElementById("password2").value;
 
-    if (password !== password2) {
-      message.textContent = "Heslá sa nezhodujú.";
-      message.style.color = "#c62828";
-      return;
+    if (password.length < 6) {
+        document.getElementById("message").textContent =
+            "Heslo musí mať aspoň 6 znakov.";
+        return;
     }
 
-    if (password.length < 8) {
-      message.textContent = "Heslo musí mať minimálne 8 znakov.";
-      message.style.color = "#c62828";
-      return;
-    }
+    localStorage.setItem("spoznajma_username", username);
+    localStorage.setItem("spoznajma_email", email);
+    localStorage.setItem("spoznajma_password", password);
+    localStorage.setItem("spoznajma_credits", "2");
 
-    const user = {
-      name: name,
-      email: email
-    };
-
-    localStorage.setItem("spoznajma_user", JSON.stringify(user));
-
-    message.textContent = "Registrácia bola uložená.";
-    message.style.color = "#2e7d32";
+    document.getElementById("message").textContent =
+        "Účet bol vytvorený. Máš 2 kredity.";
 
     setTimeout(function() {
-      window.location.href = "prihlasenie.html";
-    }, 1200);
-  });
+        window.location.href = "prihlasenie.html";
+    }, 1000);
+});
 </script>
 
 </body>
