@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SpoznajMa – Chat</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -19,13 +17,10 @@ body {
     color: #333;
 }
 
-/* HEADER */
-
 header {
     background: linear-gradient(135deg, #8e44ad, #d63384);
     color: white;
     padding: 18px 20px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,175 +38,117 @@ header {
     font-weight: bold;
 }
 
-/* CONTAINER */
-
 .container {
     max-width: 900px;
     margin: 20px auto;
     padding: 0 15px;
 }
 
-/* PROFILE */
-
 .profile {
     background: white;
     border-radius: 18px;
-
     padding: 15px;
-
     display: flex;
     align-items: center;
     gap: 15px;
-
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-
     margin-bottom: 15px;
 }
 
 .profile img {
     width: 65px;
     height: 65px;
-
     object-fit: cover;
-
     border-radius: 50%;
 }
 
 .profile h2 {
     margin: 0 0 5px;
-
     color: #8e44ad;
 }
 
 .profile p {
     margin: 0;
-
     color: #777;
 }
 
-/* NOTICE */
-
 .notice {
     background: #fff4fb;
-
     border: 1px solid #f0c7df;
-
     padding: 10px 14px;
-
     border-radius: 12px;
-
     margin-bottom: 15px;
-
     font-size: 13px;
 }
 
-/* CHAT */
-
 .chat {
     background: white;
-
     border-radius: 18px;
-
     padding: 20px;
-
     min-height: 430px;
-
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
 .messages {
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
 }
 
 /* MUŽ – VĽAVO */
-
 .message.man {
     align-self: flex-start;
-
     background: #eeeeee;
-
     color: #333;
-
     border-radius: 16px 16px 16px 4px;
-
     padding: 11px 14px;
-
     max-width: 75%;
 }
 
-/* LUCIA – VPRAVO */
-
+/* LUCIA / ŽENA – VPRAVO */
 .message.lucia {
     align-self: flex-end;
-
     background: #8e44ad;
-
     color: white;
-
     border-radius: 16px 16px 4px 16px;
-
     padding: 11px 14px;
-
     max-width: 75%;
 }
 
 .sender {
     font-size: 11px;
-
     font-weight: bold;
-
     margin-bottom: 4px;
-
     opacity: 0.8;
 }
 
 .message-text {
     font-size: 15px;
-
     line-height: 1.4;
 }
 
-/* COMPOSER */
-
 .composer {
     margin-top: 20px;
-
     display: flex;
-
     gap: 10px;
 }
 
 .composer input {
     flex: 1;
-
     padding: 13px;
-
     border: 1px solid #ddd;
-
     border-radius: 12px;
-
     font-size: 15px;
-
     outline: none;
 }
 
 .composer button {
     border: none;
-
     background: #8e44ad;
-
     color: white;
-
     padding: 0 20px;
-
     border-radius: 12px;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -219,45 +156,29 @@ header {
     background: #74358f;
 }
 
-/* ACTIONS */
-
 .actions {
     margin-top: 15px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     gap: 10px;
 }
 
 .back {
     color: #8e44ad;
-
     text-decoration: none;
-
     font-weight: bold;
 }
 
 .panic {
     background: #d63384;
-
     color: white;
-
     border: none;
-
     padding: 11px 17px;
-
     border-radius: 12px;
-
     cursor: pointer;
-
     font-weight: bold;
 }
-
-/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -289,11 +210,8 @@ header {
     .composer button {
         height: 45px;
     }
-
 }
-
 </style>
-
 </head>
 
 <body>
@@ -305,7 +223,8 @@ header {
     </div>
 
     <div class="credits">
-        Kredity: <span id="credits">2</span>
+        Kredity:
+        <span id="credits">2</span>
     </div>
 
 </header>
@@ -313,23 +232,21 @@ header {
 
 <div class="container">
 
-
-    <!-- LUCIA -->
-
     <div class="profile">
 
         <img
+            id="profileImage"
             src="images/lucia-1.jpg"
-            alt="Lucia"
+            alt="Profil"
         >
 
         <div>
 
-            <h2>
+            <h2 id="profileName">
                 Lucia, 29
             </h2>
 
-            <p>
+            <p id="profileCity">
                 Bratislava
             </p>
 
@@ -338,25 +255,17 @@ header {
     </div>
 
 
-    <!-- INFORMÁCIA -->
-
     <div class="notice">
-
         Tento profil je virtuálny a komunikácia je moderovaná.
-
     </div>
 
 
-    <!-- CHAT -->
-
     <div class="chat">
-
 
         <div
             class="messages"
             id="messages"
         >
-
 
             <!-- MUŽ – VĽAVO -->
 
@@ -367,17 +276,17 @@ header {
                 </div>
 
                 <div class="message-text">
-                    Ahoj Lucia 😊 Ako sa dnes máš?
+                    Ahoj 😊 Ako sa dnes máš?
                 </div>
 
             </div>
 
 
-            <!-- LUCIA – VPRAVO -->
+            <!-- ŽENA – VPRAVO -->
 
             <div class="message lucia">
 
-                <div class="sender">
+                <div class="sender" id="femaleSender">
                     Lucia
                 </div>
 
@@ -388,25 +297,8 @@ header {
             </div>
 
 
-            <!-- MUŽ – VĽAVO -->
-
-            <div class="message man">
-
-                <div class="sender">
-                    On
-                </div>
-
-                <div class="message-text">
-                    Tiež dobre. Som rád, že si odpísala.
-                </div>
-
-            </div>
-
-
         </div>
 
-
-        <!-- PÍSANIE -->
 
         <div class="composer">
 
@@ -417,26 +309,21 @@ header {
                 autocomplete="off"
             >
 
-            <button
-                onclick="sendMessage()"
-            >
+            <button onclick="sendMessage()">
                 Odoslať
             </button>
 
         </div>
 
 
-        <!-- TLAČIDLÁ -->
-
         <div class="actions">
 
             <a
                 class="back"
-                href="index.html"
+                href="profily.html"
             >
                 ← Späť
             </a>
-
 
             <button
                 class="panic"
@@ -447,7 +334,6 @@ header {
 
         </div>
 
-
     </div>
 
 </div>
@@ -457,54 +343,221 @@ header {
 
 /*
 ==================================================
-KREDITY
+PROFILY
+==================================================
+*/
+
+const profiles = {
+
+    lucia: {
+        name: "Lucia",
+        age: 29,
+        city: "Bratislava",
+        image: "images/lucia-1.jpg"
+    },
+
+    nina: {
+        name: "Nina",
+        age: 31,
+        city: "Košice",
+        image: "images/nina-1.jpg"
+    },
+
+    veronika: {
+        name: "Veronika",
+        age: 27,
+        city: "Žilina",
+        image: "images/veronika-1.jpg"
+    },
+
+    petra: {
+        name: "Petra",
+        age: 34,
+        city: "Trnava",
+        image: "images/petra-1.jpg"
+    },
+
+    monika: {
+        name: "Monika",
+        age: 30,
+        city: "Nitra",
+        image: "images/monika-1.jpg"
+    },
+
+    sandra: {
+        name: "Sandra",
+        age: 26,
+        city: "Banská Bystrica",
+        image: "images/sandra-1.jpg"
+    },
+
+    katarina: {
+        name: "Katarína",
+        age: 32,
+        city: "Prešov",
+        image: "images/katarina-1.jpg"
+    },
+
+    simona: {
+        name: "Simona",
+        age: 28,
+        city: "Poprad",
+        image: "images/simona-1.jpg"
+    },
+
+    alexandra: {
+        name: "Alexandra",
+        age: 30,
+        city: "Trenčín",
+        image: "images/alexandra-1.jpg"
+    },
+
+    bianka: {
+        name: "Bianka",
+        age: 28,
+        city: "Zvolen",
+        image: "images/bianka-1.jpg"
+    }
+
+};
+
+
+/*
+==================================================
+ZISTENIE PROFILU Z URL
+==================================================
+*/
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+let profileId =
+    params.get("meno");
+
+
+/*
+Ak profil nie je uvedený,
+použije sa Lucia.
+*/
+
+if (
+    !profileId ||
+    !profiles[profileId]
+) {
+    profileId = "lucia";
+}
+
+
+const profile =
+    profiles[profileId];
+
+
+/*
+==================================================
+NASTAVENIE PROFILU
+==================================================
+*/
+
+document.getElementById(
+    "profileImage"
+).src =
+    profile.image;
+
+
+document.getElementById(
+    "profileImage"
+).alt =
+    profile.name;
+
+
+document.getElementById(
+    "profileName"
+).textContent =
+    profile.name +
+    ", " +
+    profile.age;
+
+
+document.getElementById(
+    "profileCity"
+).textContent =
+    profile.city;
+
+
+document.getElementById(
+    "femaleSender"
+).textContent =
+    profile.name;
+
+
+/*
+==================================================
+KREDITY – SAMOSTATNÉ PRE KAŽDÝ PROFIL
 ==================================================
 */
 
 /*
-  Na testovanie:
+Príklad:
 
-  Ak kredit ešte neexistuje,
-  používateľ dostane 2 kredity.
+spoznajma_credits_lucia
+spoznajma_credits_nina
+spoznajma_credits_pet ra
+atď.
 
-  Ak už existuje hodnota 0,
-  nastavíme späť 2.
-
-  POZOR:
-  Toto je iba dočasné testovacie riešenie.
+Každý profil má vlastný zostatok.
 */
 
+const creditKey =
+    "spoznajma_credits_" +
+    profileId;
+
+
 let credits =
-    Number(
-        localStorage.getItem(
-            "spoznajma_credits"
-        )
+    localStorage.getItem(
+        creditKey
     );
 
 
+/*
+Ak tento profil ešte nemá
+uložené kredity, dostane 2.
+*/
+
 if (
-    isNaN(credits) ||
-    credits <= 0
+    credits === null
 ) {
 
     credits = 2;
 
     localStorage.setItem(
-        "spoznajma_credits",
+        creditKey,
         credits
     );
+
+} else {
+
+    credits =
+        Number(credits);
 
 }
 
 
 /*
-  Zobrazenie kreditov
+Zobrazenie kreditov
 */
 
-document.getElementById(
-    "credits"
-).textContent =
-    credits.toFixed(1);
+function updateCredits() {
+
+    document.getElementById(
+        "credits"
+    ).textContent =
+        Number(credits).toFixed(1);
+
+}
+
+updateCredits();
 
 
 /*
@@ -520,39 +573,31 @@ function sendMessage() {
             "messageInput"
         );
 
-
     const text =
         input.value.trim();
 
 
-    /*
-      Prázdna správa
-    */
-
     if (!text) {
-
         return;
-
     }
 
 
     /*
-      Jedna správa = 0,5 kreditu
+    Jedna správa = 0,5 kreditu
     */
 
     if (credits < 0.5) {
 
         alert(
-            "Nemáš dostatok kreditov."
+            "Nemáš dostatok kreditov pre tento profil."
         );
 
         return;
-
     }
 
 
     /*
-      Odpočítanie 0,5
+    Odpočítanie
     */
 
     credits =
@@ -560,27 +605,20 @@ function sendMessage() {
 
 
     /*
-      Uloženie
+    Uloženie PRE KONKRÉTNY PROFIL
     */
 
     localStorage.setItem(
-        "spoznajma_credits",
+        creditKey,
         credits
     );
 
 
-    /*
-      Aktualizácia čísla hore
-    */
-
-    document.getElementById(
-        "credits"
-    ).textContent =
-        credits.toFixed(1);
+    updateCredits();
 
 
     /*
-      Vytvorenie správy
+    Vytvorenie správy Lucie / ženy
     */
 
     const message =
@@ -589,11 +627,6 @@ function sendMessage() {
         );
 
 
-    /*
-      Lucia = JA
-      Preto ide správa VPRAVO.
-    */
-
     message.className =
         "message lucia";
 
@@ -601,7 +634,7 @@ function sendMessage() {
     message.innerHTML = `
 
         <div class="sender">
-            Lucia
+            ${escapeHtml(profile.name)}
         </div>
 
         <div class="message-text">
@@ -611,25 +644,13 @@ function sendMessage() {
     `;
 
 
-    /*
-      Pridanie do chatu
-    */
-
     document
         .getElementById("messages")
         .appendChild(message);
 
 
-    /*
-      Vyčistenie políčka
-    */
-
     input.value = "";
 
-
-    /*
-      Posun na novú správu
-    */
 
     message.scrollIntoView({
         behavior: "smooth",
@@ -702,7 +723,7 @@ function panicRoom() {
     if (confirmed) {
 
         window.location.href =
-            "index.html";
+            "profily.html";
 
     }
 
