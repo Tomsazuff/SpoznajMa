@@ -300,3 +300,179 @@ footer {
     }
 
 }
+/* FORMULÁRE */
+
+.form-section {
+    min-height: 70vh;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.10);
+}
+
+.form-card h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #b52b70;
+}
+
+.form-card > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="password"] {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.form-card input:focus {
+    outline: none;
+    border-color: #d63384;
+}
+
+.form-card .button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.checkbox {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: normal !important;
+}
+
+.checkbox input {
+    margin-top: 5px;
+}
+
+.form-footer {
+    margin-top: 25px !important;
+}
+
+.form-footer a {
+    color: #d63384;
+    font-weight: bold;
+}
+
+
+/* STRÁNKA PROFILU */
+
+.profile-page {
+    padding: 50px 20px;
+}
+
+.profile-main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.profile-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-title h1 {
+    color: #b52b70;
+    margin-bottom: 5px;
+}
+
+.profile-title p {
+    color: #666;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+
+.profile-description {
+    background: white;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+}
+
+.profile-description h2 {
+    margin-bottom: 10px;
+}
+
+.profile-warning {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff0f6;
+    border-left: 5px solid #d63384;
+    border-radius: 10px;
+}
+
+.profile-warning p {
+    margin-top: 8px;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* MOBILNÉ FOTKY */
+
+@media (max-width: 600px) {
+
+    .form-card {
+        padding: 25px 20px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-gallery img {
+        height: 420px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
