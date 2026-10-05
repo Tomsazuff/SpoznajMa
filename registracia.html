@@ -13,77 +13,204 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f8f5fa;
     color: #333;
+    background-color: #fff3f6;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Ctext x='10' y='55' font-size='38' fill='%23e0003b' fill-opacity='0.38'%3E♥%3C/text%3E%3Ctext x='92' y='105' font-size='30' fill='%23e0003b' fill-opacity='0.32'%3E♥%3C/text%3E%3Ctext x='48' y='135' font-size='24' fill='%23e0003b' fill-opacity='0.27'%3E♥%3C/text%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 140px 140px;
+    min-height: 100vh;
 }
 
 header {
     background: linear-gradient(135deg, #d41470, #8e3fb4);
     color: white;
     text-align: center;
-    padding: 28px 15px;
+    padding: 22px 15px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 42px;
+    font-size: 34px;
 }
 
 header p {
-    margin: 10px 0 0;
-    font-size: 23px;
+    margin: 8px 0 0;
+    font-size: 18px;
 }
 
 nav {
     background: white;
     display: flex;
     justify-content: center;
-    gap: 42px;
-    padding: 25px 10px;
+    gap: 35px;
+    padding: 16px 10px;
     box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    flex-wrap: wrap;
 }
 
 nav a {
     text-decoration: none;
     color: #7e32a2;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 17px;
 }
+
+/* PREZENTÁCIA */
+
+.hero {
+    max-width: 1100px;
+    margin: 25px auto 35px;
+    padding: 0 15px;
+}
+
+.hero-box {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    display: flex;
+    min-height: 430px;
+}
+
+.hero-text {
+    width: 52%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-text h2 {
+    color: #701b91;
+    font-size: 38px;
+    line-height: 1.15;
+    margin: 0 0 15px;
+}
+
+.hero-text p {
+    font-size: 22px;
+    line-height: 1.35;
+    margin: 0 0 20px;
+}
+
+.features {
+    margin: 0 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.features li {
+    font-size: 18px;
+    margin: 12px 0;
+    font-weight: bold;
+}
+
+.check {
+    display: inline-flex;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: #d41470;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.hero-button {
+    display: inline-block;
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 35px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #d41470, #8e3fb4);
+}
+
+.hero-image {
+    width: 48%;
+    min-height: 430px;
+    background-image: url("images/lucia-1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* IKONY */
+
+.benefits {
+    max-width: 1100px;
+    margin: 0 auto 35px;
+    padding: 0 15px;
+}
+
+.benefits-box {
+    background: rgba(255,255,255,.94);
+    border-radius: 20px;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.benefit {
+    text-align: center;
+    padding: 5px 10px;
+    border-right: 1px solid #ddd;
+}
+
+.benefit:last-child {
+    border-right: none;
+}
+
+.benefit-icon {
+    font-size: 38px;
+    color: #a20bbd;
+}
+
+.benefit strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* REGISTRÁCIA */
 
 .container {
     max-width: 760px;
-    margin: 70px auto;
-    padding: 0 20px;
+    margin: 0 auto 50px;
+    padding: 0 15px;
 }
 
 .card {
-    background: white;
-    border-radius: 30px;
-    padding: 45px 55px;
-    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    background: rgba(255,255,255,.94);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.10);
 }
 
-h2 {
+h3 {
     text-align: center;
     color: #8b32a9;
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 40px;
+    font-size: 34px;
+    margin: 0 0 28px;
 }
 
 label {
     display: block;
-    font-size: 21px;
+    font-size: 17px;
     font-weight: bold;
-    margin: 25px 0 10px;
+    margin: 18px 0 8px;
 }
 
 input {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     border: 2px solid #ddd;
-    border-radius: 18px;
-    font-size: 19px;
+    border-radius: 12px;
+    font-size: 17px;
     outline: none;
 }
 
@@ -91,23 +218,48 @@ input:focus {
     border-color: #9b3bb5;
 }
 
+.check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    font-size: 15px;
+}
+
+.check-row input {
+    width: 20px;
+    height: 20px;
+}
+
+.check-row label {
+    margin: 0;
+    font-weight: normal;
+}
+
 button {
     width: 100%;
-    margin-top: 32px;
-    padding: 20px;
+    margin-top: 25px;
+    padding: 17px;
     border: none;
-    border-radius: 18px;
+    border-radius: 14px;
     background: linear-gradient(135deg, #d41470, #8e3fb4);
     color: white;
-    font-size: 23px;
+    font-size: 21px;
     font-weight: bold;
     cursor: pointer;
 }
 
+.message {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 .bottom {
     text-align: center;
-    margin-top: 28px;
-    font-size: 18px;
+    margin-top: 22px;
+    font-size: 16px;
 }
 
 .bottom a {
@@ -116,41 +268,67 @@ button {
     text-decoration: none;
 }
 
-.message {
+footer {
     text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 25px 10px;
+    background: white;
+    color: #777;
+    font-size: 14px;
 }
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 34px;
-    }
+/* MOBIL */
 
-    header p {
-        font-size: 20px;
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 30px;
     }
 
     nav {
-        gap: 22px;
-        flex-wrap: wrap;
+        gap: 18px;
     }
 
     nav a {
+        font-size: 15px;
+    }
+
+    .hero-box {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding: 28px 24px;
+    }
+
+    .hero-text h2 {
+        font-size: 31px;
+    }
+
+    .hero-text p {
         font-size: 19px;
     }
 
-    .container {
-        margin: 35px auto;
+    .hero-image {
+        width: 100%;
+        min-height: 360px;
+    }
+
+    .benefits-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefit {
+        margin: 8px 0;
+        border-right: none;
     }
 
     .card {
-        padding: 30px 22px;
+        padding: 25px 20px;
     }
 
-    h2 {
-        font-size: 34px;
+    h3 {
+        font-size: 30px;
     }
 }
 </style>
@@ -159,26 +337,119 @@ button {
 <body>
 
 <header>
-    <h1>SpoznajMa ❤️</h1>
-    <p>Vytvor si účet</p>
+    <h1>❤️ SpoznajMa ❤️</h1>
+    <p>Virtuálne profily a moderované konverzácie</p>
 </header>
 
 <nav>
     <a href="index.html">Domov</a>
     <a href="profily.html">Profily</a>
     <a href="kredity.html">Kredity</a>
+    <a href="registracia.html">Registrácia</a>
     <a href="prihlasenie.html">Prihlásenie</a>
 </nav>
+
+
+<!-- PREZENTAČNÁ PONUKA -->
+
+<section class="hero">
+
+    <div class="hero-box">
+
+        <div class="hero-text">
+
+            <h2>
+                Spoznaj zaujímavé ženy
+                v modernom prostredí
+            </h2>
+
+            <p>
+                Príjemné rozhovory
+                a bezpečné prostredie.
+            </p>
+
+            <ul class="features">
+
+                <li>
+                    <span class="check">✓</span>
+                    Príjemné rozhovory
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    Nové kontakty
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    Jednoduché používanie
+                </li>
+
+                <li>
+                    <span class="check">✓</span>
+                    Bezpečné prostredie
+                </li>
+
+            </ul>
+
+            <a class="hero-button" href="profily.html">
+                Zobraziť profily →
+            </a>
+
+        </div>
+
+        <div class="hero-image"></div>
+
+    </div>
+
+</section>
+
+
+<!-- VÝHODY -->
+
+<section class="benefits">
+
+    <div class="benefits-box">
+
+        <div class="benefit">
+            <div class="benefit-icon">♥</div>
+            <strong>Príjemné<br>rozhovory</strong>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">●</div>
+            <strong>Nové<br>kontakty</strong>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">🛡</div>
+            <strong>Bezpečné<br>prostredie</strong>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">♟</div>
+            <strong>Diskrétne<br>používanie</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTRÁCIA -->
 
 <div class="container">
 
     <div class="card">
 
-        <h2>Registrácia</h2>
+        <h3>Registrácia</h3>
 
         <form id="registerForm">
 
-            <label for="username">Meno alebo prezývka</label>
+            <label for="username">
+                Meno alebo prezývka
+            </label>
+
             <input
                 type="text"
                 id="username"
@@ -186,7 +457,11 @@ button {
                 required
             >
 
-            <label for="email">E-mail</label>
+
+            <label for="email">
+                E-mail
+            </label>
+
             <input
                 type="email"
                 id="email"
@@ -194,56 +469,173 @@ button {
                 required
             >
 
-            <label for="password">Heslo</label>
+
+            <label for="password">
+                Heslo
+            </label>
+
             <input
                 type="password"
                 id="password"
-                placeholder="Tvoje heslo"
-                required
+                placeholder="Minimálne 6 znakov"
                 minlength="6"
+                required
             >
 
-            <button type="submit">Vytvoriť účet</button>
+
+            <label for="password2">
+                Zopakuj heslo
+            </label>
+
+            <input
+                type="password"
+                id="password2"
+                placeholder="Zopakuj heslo"
+                minlength="6"
+                required
+            >
+
+
+            <div class="check-row">
+
+                <input
+                    type="checkbox"
+                    id="age"
+                    required
+                >
+
+                <label for="age">
+                    Potvrdzujem, že mám najmenej 18 rokov.
+                </label>
+
+            </div>
+
+
+            <div class="check-row">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required
+                >
+
+                <label for="terms">
+                    Súhlasím s podmienkami služby.
+                </label>
+
+            </div>
+
+
+            <button type="submit">
+                Vytvoriť účet
+            </button>
 
         </form>
 
+
         <div class="message" id="message"></div>
+
 
         <div class="bottom">
             Už máš účet?
-            <a href="prihlasenie.html">Prihlás sa</a>
+            <a href="prihlasenie.html">
+                Prihlás sa
+            </a>
         </div>
 
     </div>
 
 </div>
 
+
+<footer>
+    © 2026 SpoznajMa |
+    Podmienky služby |
+    Ochrana súkromia
+</footer>
+
+
 <script>
-document.getElementById("registerForm").addEventListener("submit", function(e) {
+
+document
+.getElementById("registerForm")
+.addEventListener("submit", function(e) {
+
     e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+    const username =
+        document.getElementById("username").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const password2 =
+        document.getElementById("password2").value;
+
+    const message =
+        document.getElementById("message");
+
 
     if (password.length < 6) {
-        document.getElementById("message").textContent =
+
+        message.textContent =
             "Heslo musí mať aspoň 6 znakov.";
+
         return;
     }
 
-    localStorage.setItem("spoznajma_username", username);
-    localStorage.setItem("spoznajma_email", email);
-    localStorage.setItem("spoznajma_password", password);
-    localStorage.setItem("spoznajma_credits", "2");
 
-    document.getElementById("message").textContent =
+    if (password !== password2) {
+
+        message.textContent =
+            "Heslá sa nezhodujú.";
+
+        return;
+    }
+
+
+    /*
+       Zatiaľ zachovávame existujúci systém
+       s 2 bezplatnými kreditmi.
+    */
+
+    localStorage.setItem(
+        "spoznajma_username",
+        username
+    );
+
+    localStorage.setItem(
+        "spoznajma_email",
+        email
+    );
+
+    localStorage.setItem(
+        "spoznajma_password",
+        password
+    );
+
+    localStorage.setItem(
+        "spoznajma_credits",
+        "2"
+    );
+
+
+    message.textContent =
         "Účet bol vytvorený. Máš 2 kredity.";
 
+
     setTimeout(function() {
-        window.location.href = "prihlasenie.html";
+
+        window.location.href =
+            "prihlasenie.html";
+
     }, 1000);
+
 });
+
 </script>
 
 </body>
